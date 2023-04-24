@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인페이지</title>
+  <style>
+    /*스타일 작성 */
+    body {
+      width: 390px;
+      height: 844px;
+      background-color: #325489;
+      margin: 0;
+    }
+
+    #one {
+      width: 100%;
+      height: 15%;
+    }
+
+    #two {
+      width: 100%;
+      height: 20%;
+      background-color: #D9D9D9;
+    }
+
+    #three {
+      width: 100%;
+      height: 8%;
+    }
+
+    #four {
+      width: 100%;
+      height: 52%;
+      background-color: white;
+    }
+
+    #five {
+      width: 100%;
+      height: 5%;
+    }
+
+    td {
+      width: 100%;
+      height: 100%;
+    }
+
+    #Calendar {
+      text-align: center;
+      /* margin: 0 auto; */
+    }
+
+    #Calendar>thead>tr:first-child>td {
+      font-weight: bold;
+    }
+
+    #Calendar>thead>tr:last-child>td {
+      background-color: gray;
+      color: white;
+    }
+
+    #pastDay {
+      background-color: lightgray;
+    }
+
+    #today {
+      background-color: #FFCA64;
+      cursor: pointer;
+    }
+
+
+    #futureDay {
+      background-color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    #futureDay.choiceDay,
+    #today.choiceDay {
+      background-color: #3E85EF;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 동적으로 만들 예정 -->
+  <div id="one"></div>
+  <div id="two"></div>
+  <div id="three"></div>
+  <div id="four">
+    <table id="Calendar">
+      <thead>
+        <tr>
+          <td onclick="prevCalendar()" style="cursor: pointer;">&#60;</td>
+          <td colspan="5">
+            <span id="calYear"></span>년
+            <span id="calMonth"></span>월
+          </td>
+          <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+        </tr>
+        <tr>
+          <td>일</td>
+          <td>월</td>
+          <td>화</td>
+          <td>수</td>
+          <td>목</td>
+          <td>금</td>
+          <td>토</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <div id="five"></div>
+  <script>
+    // 페이지 로드 후 캘린더 실행
+    window.onload = function () {
+      buildCalendar();
+    }
+    // 현재 달을 페이지 로드한 달로 설정
+    let now = new Date();
+    let today = new Date();   //페이지를 로드 한 날짜로 저장
+    console.log(new Date())
+
+    function buildCalendar() {
+      let firstDate = new Date(now.getFullYear(), now.getMonth, 1); //이번달 1일
+      let lastDate = new Date(now.getFullYear(), now.getMonth() + 1, 0); //이번달 마지막날
+    }
+    let tbCalendar = document.querySelector("#Calender>tbody");
+    document.getElementById("calYear").innerText = now.getFullYear(); //연도 보이기
+
+    document.getElementById("calMonth").innerText = now.getMonth() + 1; //월 보이기 (월은 +1써야함)
+
+    while (tbCalendar.rows.length > 0) {
+      //달 이동을 하면 아래에 출력 결과를 보이는 것을 초기화해서 안보이게 한다.
+      tbCalendar.deleteRow(tbCalendar.rows.length - 1);
+    }
+
+    let nowRow = tbCalendar.insertRow(); //행 추가
+
+    // 이번달 1일 위치 설정(목요일이 1일이면, 1일이 일, 월, 화, 수 다음에 보이도록 한다.)
+    for (let i = 0; i < firstDate.getDay(); i++) {
+      let nowColumn = nowRow.insertCell(); //열 추가
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!-- 수정할 것:추천개수를 저장하기 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>추천기능-기초</title>
+</head>
+
+<body>
+  <p>누적값: <span id="counter">0</span></p>
+
+  <button id="best">👍🏻</button>
+
+  <script>
+
+    let counter = 0;
+    function incrementCounter() {
+      counter++;
+      document.getElementById("counter").innerText = counter; // 누적값을 화면에 표시
+    }
+    document.getElementById("best").addEventListener("click", incrementCounter);
+  </script>
+</body>
+
+</html>

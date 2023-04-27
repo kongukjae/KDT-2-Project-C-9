@@ -1,0 +1,58 @@
+<!-- 한번만 추천할 수 있게 함&2번 이상 클릭시 안내창 나옴 -->
+<!-- 수정 
+1. 회원당 한번만 할 수 있게 db연결-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>추천기능</title>
+  <style>
+    #w {
+      display: none;
+    }
+
+    #w.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 카운터가 표시될 영역 -->
+  <p>누적값: <span id="counter">0</span></p>
+
+  <!-- 카운터가 증가될 버튼 -->
+  <button id="best">👍🏻</button>
+  <div id="w">추천은 한 번만 가능합니다.</div>
+  <script>
+    // 누적값을 저장할 변수
+    let counter = 0;
+    // 이미지를 클릭했는지 체크할 변수
+    let clicked = false;
+
+    // 이미지를 클릭할 때 호출되는 함수
+    function incrementCounter() {
+      if (!clicked) { // 이미 클릭한 경우 중복 클릭 방지
+        counter++; // 누적값 증가
+        document.getElementById("counter").innerText = counter; // 누적값을 화면에 표시
+        clicked = true; // 클릭 상태를 true로 변경
+      } else {
+        document.getElementById("w").classList.add("active"); // 2번 이상 클릭시 나오는 안내창
+
+      }
+
+    }
+
+    // 이미지 요소에 클릭 이벤트 리스너 등록
+    document.getElementById("best").addEventListener("click", incrementCounter);
+  </script>
+
+</body>
+
+</html>
+</body>
+
+</html>

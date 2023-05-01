@@ -36,6 +36,13 @@ const div1button = document.getElementById("button1");
 div1button.style.height = "45%";
 div1button.style.width = "25%";
 div1button.style.margin = "auto"; //버튼을 가운데로 이동
+//버튼1 이미지
+div1button.style.backgroundImage = "url('./img/logo.png')";
+// div1button.style.backgroundSize = "contain";
+// div1button.style.backgroundRepeat = "no-repeat";
+div1button.style.backgroundSize = "cover";
+div1button.style.backgroundColor = "transparent"; //버튼 색 투명
+div1button.style.border = "none"; //테두리 X
 
 // 버튼2 스타일
 const div1button2 = document.getElementById("button2");
@@ -45,6 +52,11 @@ div1button2.style.marginTop = "2%"; //위 마진
 div1button2.style.position = "absolute";
 div1button2.style.top = "0";
 div1button2.style.right = "0";
+//버튼2 이미지
+div1button2.style.backgroundImage = "url('./img/menu.png')";
+div1button2.style.backgroundSize = "cover";
+div1button2.style.backgroundColor = "transparent"; //버튼 색 투명
+div1button2.style.border = "none"; //테두리 X
 
 // ⭐div2 스타일
 const div2 = document.getElementById("div2");
@@ -69,11 +81,16 @@ div3text.style.width = "60%";
 div3text.style.borderRadius = "30px";
 div3text.style.marginBottom = "2%"; //아래 마진
 
-// 버튼 스타일
-const div3Button = document.getElementById("button3");
-div3Button.style.height = "60%";
-div3Button.style.width = "10%";
-div3Button.style.marginBottom = "2%"; //아래 마진
+// 버튼3 스타일
+const div3button = document.getElementById("button3");
+div3button.style.height = "60%";
+div3button.style.width = "10%";
+div3button.style.marginBottom = "2%"; //아래 마진
+//버튼3 이미지
+div3button.style.backgroundImage = "url('./img/glass.png')";
+div3button.style.backgroundSize = "cover";
+div3button.style.backgroundColor = "transparent"; //버튼 색 투명
+div3button.style.border = "none"; //테두리 X
 
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");
@@ -88,10 +105,15 @@ div5.style.justifyContent = "flex-end"; //버튼을 오른쪽에 배치
 
 // div5안에 있는 버튼(나침반 or 별자리)
 let div5_1 = maker("button", "id", "button4", div5);
-// 버튼 스타일
-div5button = document.getElementById("button4");
+// 버튼 스타일 (앞으로 나오도록 수정)
+const div5button = document.getElementById("button4");
 div5button.style.width = "15%";
 div5button.style.height = "50%";
+//버튼5 이미지
+div5button.style.backgroundImage = "url('./img/star.png')";
+div5button.style.backgroundSize = "cover";
+div5button.style.backgroundColor = "transparent"; //버튼 색 투명
+div5button.style.border = "none"; //테두리 X
 
 // 월출, 월몰 api
 var xhr = new XMLHttpRequest();

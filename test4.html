@@ -11,8 +11,20 @@
 <body>
   <div id="root"></div>
   <script>
-    // 날짜 locdate 천문현상명 astroTitle 천문현상시간 astroTime 천문현상 astroEvent
+    // 날짜 locdate 천문현상명 astroTitle 천문현상시간 astroTime 천문현상설명 astroEvent
     //div2순서 날짜+천문형상명-> 시간->천문현상 설명
+
+
+    // 천문현상 설명
+    function getastroEventValue(xmlData) {
+      // XML 데이터에서 moonrise 값을 가져오는 함수
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+      const astroEvent = xmlDoc.querySelector("astroEvent").textContent.trim();
+      return astroEvent;
+    }
+
+
     var xhr = new XMLHttpRequest();
     var url = 'http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo'; /*URL*/
     var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D'; /*Service Key*/
@@ -21,6 +33,11 @@
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
       console.log(xhr.response);
+      var astroEventValue = getastroEventValue(xhr.response);
+      const root = document.getElementById("root");
+
+      root.textContent =
+        "천문현상 설명: " + astroEventValue
 
 
     };

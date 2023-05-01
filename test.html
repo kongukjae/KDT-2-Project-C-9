@@ -11,12 +11,21 @@
 <body>
   <div id="root"></div>
   <script>
-    function moonApi(xmlData) {
+    // 월출 API
+    function moonRiseApi(xmlData) {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlData, "application/xml");
       const text = xmlDoc.querySelector("moonrise").textContent.trim();
       return text;
     }
+    // 월몰 API
+    function moonSetAPI(xmlData) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+      const text2 = xmlDoc.querySelector("moonset").textContent.trim();
+      return text2;
+    }
+
 
 
     const root = document.getElementById("root");
@@ -28,9 +37,12 @@
     queryParams += '&' + encodeURIComponent('location') + '=' + encodeURIComponent('서울');
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
-      var moonriseValue = moonApi(xhr.response);
+      var moonriseValue = moonRiseApi(xhr.response);
+      var moonsetValue = moonSetAPI(xhr.response);
       var rootText = document.getElementById("root");
-      rootText.textContent = "월출시간: " + moonriseValue;
+      rootText.textContent = "월출시간: " + moonriseValue + " ,월몰시간:" + moonsetValue;
+      // rootText.textContent = "월몰시간: " + moonsetValue;
+
     };
 
     xhr.send('');

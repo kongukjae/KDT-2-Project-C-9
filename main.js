@@ -62,6 +62,39 @@ div1button2.style.border = "none"; //테두리 X
 const div2 = document.getElementById("div2");
 div2.style.height = "20%";
 div2.style.backgroundColor = "#D9D9D9";
+// div2 텍스트
+let div2_1 = maker("p", "id", "title", div2);
+let div2_2 = maker("p", "id", "titleA", div2);
+let div2_3 = maker("p", "id", "time", div2);
+let div2_4 = maker("p", "id", "timeA", div2);
+let div2_5 = maker("p", "id", "event", div2);
+let div2_6 = maker("p", "id", "eventA", div2);
+
+// 텍스트 스타일
+const div2text = document.getElementById("title");
+div2text.style.width = "100%";
+div2text.style.height = "10%";
+div2text.textContent = "이 달의 천문 현상";
+const div2text2 = document.getElementById("titleA");
+div2text2.style.width = "100%";
+div2text2.style.height = "10%";
+div2text2.textContent = "(천문현상명)";
+const div2text3 = document.getElementById("time");
+div2text3.style.width = "100%";
+div2text3.style.height = "10%";
+div2text3.textContent = "(관측 할 수 있는 시간)";
+const div2text4 = document.getElementById("timeA");
+div2text4.style.width = "100%";
+div2text4.style.height = "10%";
+div2text4.textContent = "(천문현상 시간)";
+const div2text5 = document.getElementById("event");
+div2text5.style.width = "100%";
+div2text5.style.height = "10%";
+div2text5.textContent = "설명";
+const div2text6 = document.getElementById("eventA");
+div2text6.style.width = "100%";
+div2text6.style.height = "10%";
+div2text6.textContent = "(천문현상 설명)";
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");
@@ -108,7 +141,7 @@ let div5_1 = maker("button", "id", "button4", div5);
 // 버튼 스타일 (앞으로 나오도록 수정)
 const div5button = document.getElementById("button4");
 div5button.style.width = "15%";
-div5button.style.height = "50%";
+div5button.style.height = "70%";
 //버튼5 이미지
 div5button.style.backgroundImage = "url('./img/star.png')";
 div5button.style.backgroundSize = "cover";
@@ -120,7 +153,11 @@ var xhr = new XMLHttpRequest();
 
 var url =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
-var queryParams = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
+var queryParams =
+  "?" +
+  encodeURIComponent("serviceKey") +
+  "=" +
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent("20230501");
 queryParams +=

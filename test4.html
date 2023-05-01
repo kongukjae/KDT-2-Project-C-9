@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>천문현상 API도 화면에 불러오기</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    // 날짜 locdate 천문현상명 astroTitle 천문현상시간 astroTime 천문현상 astroEvent
+    //div2순서 날짜+천문형상명-> 시간->천문현상 설명
+    var xhr = new XMLHttpRequest();
+    var url = 'http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo'; /*URL*/
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D'; /*Service Key*/
+    queryParams += '&' + encodeURIComponent('solYear') + '=' + encodeURIComponent('2023'); /**/
+    queryParams += '&' + encodeURIComponent('solMonth') + '=' + encodeURIComponent('05'); /**/
+    xhr.open('GET', url + queryParams);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.response);
+
+
+    };
+
+    xhr.send('');
+  </script>
+</body>
+
+</html>

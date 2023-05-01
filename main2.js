@@ -177,11 +177,7 @@ function moonSetAPI(xmlData) {
 var xhr = new XMLHttpRequest();
 var url =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
-var queryParams =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+var queryParams = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
 queryParams +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent("20230501");
 queryParams +=

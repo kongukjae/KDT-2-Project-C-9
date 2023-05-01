@@ -14,10 +14,14 @@
     // 날짜 locdate 천문현상명 astroTitle 천문현상시간 astroTime 천문현상설명 astroEvent
     //div2순서 날짜+천문형상명-> 시간->천문현상 설명
 
+    // 날짜 불러오기
 
-    // 천문현상 설명
+
+
+
+    // 천문현상 설명 불러오기
     function getastroEventValue(xmlData) {
-      // XML 데이터에서 moonrise 값을 가져오는 함수
+      // XML 데이터에서 astroEvent 값을 가져오는 함수
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlData, "application/xml");
       const astroEvent = xmlDoc.querySelector("astroEvent").textContent.trim();

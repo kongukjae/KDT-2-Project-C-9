@@ -1,3 +1,5 @@
+/* 수정할 것
+1.날짜를 하나만 하는 것이 아니라 오늘 날짜에 맞추어서 바꾸게 하기 */
 //body
 document.body.style.margin = "0px";
 
@@ -156,10 +158,11 @@ div5button.style.backgroundSize = "cover";
 div5button.style.backgroundColor = "transparent"; //버튼 색 투명
 div5button.style.border = "none"; //테두리 X
 
+// fix
 // 월출, 월몰 api
-// XML 데이터에서 moonrise 값을 가져오는 함수
 // 월출 API
 function getMoonriseValue(xmlData) {
+  // XML 데이터에서 moonrise 값을 가져오는 함수
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlData, "application/xml");
   const moonrise = xmlDoc.querySelector("moonrise").textContent.trim();
@@ -169,8 +172,8 @@ function getMoonriseValue(xmlData) {
 function moonSetAPI(xmlData) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlData, "application/xml");
-  const text2 = xmlDoc.querySelector("moonset").textContent.trim();
-  return text2;
+  const moonset = xmlDoc.querySelector("moonset").textContent.trim();
+  return moonset;
 }
 
 // XMLHttpRequest를 통해 XML 데이터를 받아오는 코드

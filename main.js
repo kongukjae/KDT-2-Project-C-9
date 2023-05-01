@@ -62,6 +62,9 @@ div1button2.style.border = "none"; //테두리 X
 const div2 = document.getElementById("div2");
 div2.style.height = "20%";
 div2.style.backgroundColor = "#D9D9D9";
+/* div2.style.display = "flex";
+div2.style.flexDirection = "row";
+ */
 // div2 텍스트
 let div2_1 = maker("p", "id", "title", div2);
 let div2_2 = maker("p", "id", "titleA", div2);
@@ -72,28 +75,34 @@ let div2_6 = maker("p", "id", "eventA", div2);
 
 // 텍스트 스타일
 const div2text = document.getElementById("title");
-div2text.style.width = "100%";
+div2text.style.width = "50%";
 div2text.style.height = "10%";
+div2text.style.margin = "0";
 div2text.textContent = "이 달의 천문 현상";
 const div2text2 = document.getElementById("titleA");
-div2text2.style.width = "100%";
+div2text2.style.width = "50%";
 div2text2.style.height = "10%";
+div2text2.style.margin = "0";
 div2text2.textContent = "(천문현상명)";
 const div2text3 = document.getElementById("time");
-div2text3.style.width = "100%";
+div2text3.style.width = "50%";
 div2text3.style.height = "10%";
-div2text3.textContent = "(관측 할 수 있는 시간)";
+div2text3.style.margin = "1%";
+div2text3.textContent = "관측 할 수 있는 시간";
 const div2text4 = document.getElementById("timeA");
-div2text4.style.width = "100%";
+div2text4.style.width = "50%";
 div2text4.style.height = "10%";
+div2text4.style.margin = "1%";
 div2text4.textContent = "(천문현상 시간)";
 const div2text5 = document.getElementById("event");
-div2text5.style.width = "100%";
+div2text5.style.width = "50%";
 div2text5.style.height = "10%";
+div2text5.style.margin = "1%";
 div2text5.textContent = "설명";
 const div2text6 = document.getElementById("eventA");
-div2text6.style.width = "100%";
+div2text6.style.width = "50%";
 div2text6.style.height = "10%";
+div2text6.style.margin = "1%";
 div2text6.textContent = "(천문현상 설명)";
 
 // ⭐div3 스타일

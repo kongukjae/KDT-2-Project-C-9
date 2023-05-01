@@ -11,10 +11,10 @@
 <body>
   <div id="root"></div>
   <script>
-    function moonApi(xmlData, text) {
+    function moonApi(xmlData) {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlData, "application/xml");
-      const text = xmlDoc.querySelector("text").textContent.trim();
+      const text = xmlDoc.querySelector("moonrise").textContent.trim();
       return text;
     }
 
@@ -28,7 +28,7 @@
     queryParams += '&' + encodeURIComponent('location') + '=' + encodeURIComponent('서울');
     xhr.open('GET', url + queryParams);
     xhr.onreadystatechange = function () {
-      var moonriseValue = moonApi(xhr.response, moonrise);
+      var moonriseValue = moonApi(xhr.response);
       var rootText = document.getElementById("root");
       rootText.textContent = "월출시간: " + moonriseValue;
     };

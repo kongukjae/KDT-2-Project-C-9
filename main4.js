@@ -153,12 +153,10 @@ div5button.style.backgroundColor = "transparent"; //버튼 색 투명
 div5button.style.border = "none"; //테두리 X
 
 // fix
-// 📆해당하는 달에 맞게 api보이게 하기
+// 📆해당하는 날짜에 맞게 api보이게 하기
 var currentDate = new Date(); // 현재 날짜 객체 가져오기
-var currentMonth = currentDate.getMonth() + 1; // 현재 달 가져오기 (0부터 시작하므로 1을 더해줌)
-
-/* queryParams2 +=
-  "&" + encodeURIComponent("solMonth") + "=" + encodeURIComponent(currentMonth); */
+var currentMonth = currentDate.getMonth() + 1; // 해당하는 달 가져오기 (0부터 시작하므로 1을 더해줌)
+var currentYear = currentDate.getFullYear();
 
 // 월출, 월몰 api
 // 월출 API
@@ -217,12 +215,12 @@ var queryParams2 =
   "=" +
   "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams2 +=
-  "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent("2023");
+  "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear); //해당하는 날짜에 맞게 나오게 함
 queryParams2 +=
   "&" +
   encodeURIComponent("solMonth") +
   "=" +
-  encodeURIComponent("0" + currentMonth);
+  encodeURIComponent("0" + currentMonth); // 해당하는 달에 맞게 나오게 함. 0을 꼭 써야 하므로 추가함
 xhr2.open("GET", url2 + queryParams2);
 xhr2.onreadystatechange = function () {
   if (xhr2.readyState === 4 && xhr2.status === 200) {

@@ -172,11 +172,7 @@ function moonSetAPI(xmlData) {
 var xhr1 = new XMLHttpRequest();
 var url1 =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
-var queryParams1 =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+var queryParams1 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
 queryParams1 +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent("20230501");
 queryParams1 +=
@@ -203,11 +199,7 @@ function getmoonValue(xmlData2) {
 var xhr2 = new XMLHttpRequest();
 var url2 =
   "http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo";
-var queryParams2 =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+var queryParams2 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
 queryParams2 +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent("2023");
 queryParams2 +=

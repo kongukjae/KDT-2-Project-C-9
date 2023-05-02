@@ -172,11 +172,7 @@ function moonSetAPI(xmlData) {
 var xhr = new XMLHttpRequest();
 var url =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
-var queryParams =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+var queryParams = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
 queryParams +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent("20230501");
 queryParams +=
@@ -194,39 +190,34 @@ xhr.onreadystatechange = function () {
 };
 xhr.send();
 
+// 천문현상 설명 api
 // 천문현상명(날짜 포함) astroTitle  천문현상설명 astroEvent
 //div2순서 천문현상명(날짜 포함)->천문현상 설명
 // 한번에 나타내기
-function getmoonValue(xmlData) {
+function getmoonValue(xmlData2) {
   const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+  const xmlDoc = parser.parseFromString(xmlData2, "application/xml");
   const astroTitle = xmlDoc.querySelector("astroTitle").textContent.trim();
   const astroEvent = xmlDoc.querySelector("astroEvent").textContent.trim();
-
   return { astroTitle, astroEvent };
 }
 
-var xhr = new XMLHttpRequest();
-var url =
-  "http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo"; /*URL*/
-var queryParams =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D"; /*Service Key*/
-queryParams +=
+// var xhr = new XMLHttpRequest();
+var url2 =
+  "http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo";
+var queryParams2 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
+queryParams2 +=
   "&" +
   encodeURIComponent("solYear") +
   "=" +
   encodeURIComponent("2023"); /* 날짜 맞춰서 나오게 수정하기 */
-queryParams +=
+queryParams2 +=
   "&" + encodeURIComponent("solMonth") + "=" + encodeURIComponent("06");
-xhr.open("GET", url + queryParams);
+xhr.open("GET", url2 + queryParams2);
 xhr.onreadystatechange = function () {
   console.log(xhr.response);
-  var xmlData = xhr.responseText;
-  var { astroTitle, astroEvent } = getmoonValue(xmlData);
-
+  var xmlData2 = xhr.responseText;
+  var { astroTitle, astroEvent } = getmoonValue(xmlData2);
   div2text2.textContent = astroTitle; //천문현상 날짜+명칭
   div2text4.textContent = astroEvent; //관측할 수 있는 시간+설명
 };

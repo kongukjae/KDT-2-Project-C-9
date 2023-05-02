@@ -80,16 +80,21 @@ div2text.style.width = "50%";
 div2text.style.height = "10%";
 div2text.style.margin = "0";
 div2text.textContent = "이달의 천문 현상";
-const div2text2 = document.getElementById("titleA");
+div2text.style.fontWeight = "bold";
+
+const div2text2 = document.getElementById("titleA"); //api 텍스트
 div2text2.style.width = "100%";
-div2text2.style.height = "10%";
-div2text2.style.margin = "0";
+div2text2.style.height = "20%";
+div2text2.style.marginTop = "1%";
+
 const div2text3 = document.getElementById("time");
 div2text3.style.width = "60%";
 div2text3.style.height = "10%";
-div2text3.style.margin = "1%";
+div2text3.style.marginTop = "3%";
 div2text3.textContent = "관측 할 수 있는 시간과 설명";
-const div2text4 = document.getElementById("timeA");
+div2text3.style.fontWeight = "bold";
+
+const div2text4 = document.getElementById("timeA"); //api 텍스트
 div2text4.style.width = "100%";
 div2text4.style.height = "10%";
 div2text4.style.margin = "1%";
@@ -146,7 +151,6 @@ div5button.style.backgroundSize = "cover";
 div5button.style.backgroundColor = "transparent"; //버튼 색 투명
 div5button.style.border = "none"; //테두리 X
 
-// fix
 // 월출, 월몰 api
 // 월출 API
 function getMoonriseValue(xmlData) {

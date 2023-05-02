@@ -200,6 +200,9 @@ xhr1.onreadystatechange = function () {
   }
 };
 xhr1.send();
+
+// 천문현상 설명 api
+// 천문현상명(날짜 포함) astroTitle  천문현상설명 astroEvent
 function getmoonValue(xmlData2) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlData2, "application/xml");

@@ -52,7 +52,10 @@ div1button.style.backgroundRepeat = "no-repeat"; //이미지 반복X
 const div1text = document.getElementById("text1");
 div1text.style.height = "5%";
 div1text.style.width = "25%";
-div1text.innerHTML = "로그인";
+div1text.textContent = "로그인";
+div1text.style.color = "white";
+div1text.style.fontWeight = "bold";
+div1text.style.fontSize = "18px";
 div1text.style.textAlign = "center";
 div1text.style.margin = "0";
 

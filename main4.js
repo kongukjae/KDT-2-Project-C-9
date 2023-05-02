@@ -152,7 +152,6 @@ div5button.style.backgroundSize = "cover";
 div5button.style.backgroundColor = "transparent"; //버튼 색 투명
 div5button.style.border = "none"; //테두리 X
 
-// fix
 // 📆해당하는 날짜에 맞게 api보이게 하기
 var currentDate = new Date(); // 현재 날짜 객체 가져오기
 var currentMonth = currentDate.getMonth() + 1; // 해당하는 달 가져오기 (0부터 시작하므로 1을 더해줌)
@@ -185,11 +184,7 @@ function moonSetAPI(xmlData) {
 var xhr1 = new XMLHttpRequest();
 var url1 =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
-var queryParams1 =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+var queryParams1 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
 queryParams1 +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent(date); //YYYYMMDD로 보이게 하기
 queryParams1 +=
@@ -216,11 +211,7 @@ function getmoonValue(xmlData2) {
 var xhr2 = new XMLHttpRequest();
 var url2 =
   "http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo";
-var queryParams2 =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+var queryParams2 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
 queryParams2 +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear); //해당하는 날짜에 맞게 나오게 함
 queryParams2 +=

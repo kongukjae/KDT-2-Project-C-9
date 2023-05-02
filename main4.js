@@ -152,6 +152,14 @@ div5button.style.backgroundSize = "cover";
 div5button.style.backgroundColor = "transparent"; //버튼 색 투명
 div5button.style.border = "none"; //테두리 X
 
+// fix
+// 📆해당하는 달에 맞게 api보이게 하기
+var currentDate = new Date(); // 현재 날짜 객체 가져오기
+var currentMonth = currentDate.getMonth() + 1; // 현재 달 가져오기 (0부터 시작하므로 1을 더해줌)
+
+/* queryParams2 +=
+  "&" + encodeURIComponent("solMonth") + "=" + encodeURIComponent(currentMonth); */
+
 // 월출, 월몰 api
 // 월출 API
 function getMoonriseValue(xmlData) {
@@ -172,7 +180,11 @@ function moonSetAPI(xmlData) {
 var xhr1 = new XMLHttpRequest();
 var url1 =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
-var queryParams1 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
+var queryParams1 =
+  "?" +
+  encodeURIComponent("serviceKey") +
+  "=" +
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams1 +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent("20230501");
 queryParams1 +=
@@ -199,11 +211,18 @@ function getmoonValue(xmlData2) {
 var xhr2 = new XMLHttpRequest();
 var url2 =
   "http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo";
-var queryParams2 = "?" + encodeURIComponent("serviceKey") + "=" + "키값";
+var queryParams2 =
+  "?" +
+  encodeURIComponent("serviceKey") +
+  "=" +
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams2 +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent("2023");
 queryParams2 +=
-  "&" + encodeURIComponent("solMonth") + "=" + encodeURIComponent("06");
+  "&" +
+  encodeURIComponent("solMonth") +
+  "=" +
+  encodeURIComponent("0" + currentMonth);
 xhr2.open("GET", url2 + queryParams2);
 xhr2.onreadystatechange = function () {
   if (xhr2.readyState === 4 && xhr2.status === 200) {

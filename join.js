@@ -1,5 +1,7 @@
 /* 수정할 것
-1. 로고 클릭시 메인페이지 이동 */
+1. 로고 클릭시 메인페이지 이동 
+2. 지역 추가하기
+3. 지역 선택하면 메인에 있는 월출·월몰 시각이 지역에 맞게 보여주기 */
 
 document.body.style.margin = "0px";
 
@@ -111,7 +113,7 @@ div2text3.style.marginLeft = "14%";
 // 지역 select
 const div2input3 = document.getElementById("localSelect");
 div2input3.setAttribute("type", "password");
-div2input3.style.height = "4%";
+div2input3.style.height = "20%";
 div2input3.style.width = "70%";
 div2input3.style.marginLeft = "14%";
 // 옵션 추가
@@ -140,6 +142,9 @@ var options = [
   { value: "option9", text: "경산" },
   { value: "option10", text: "경주" },
   { value: "option11", text: "계룡" },
+  { value: "option12", text: "고령" },
+  { value: "option13", text: "고성" },
+  { value: "option14", text: "고양" },
 ];
 
 for (var i = 0; i < options.length; i++) {
@@ -148,6 +153,8 @@ for (var i = 0; i < options.length; i++) {
   option.text = options[i].text;
   select.appendChild(option);
 }
+
+select.setAttribute("size", options.length);
 
 //가입 INPUT
 const div2input4 = document.getElementById("submit");

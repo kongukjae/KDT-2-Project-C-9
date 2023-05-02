@@ -157,6 +157,13 @@ div5button.style.border = "none"; //테두리 X
 var currentDate = new Date(); // 현재 날짜 객체 가져오기
 var currentMonth = currentDate.getMonth() + 1; // 해당하는 달 가져오기 (0부터 시작하므로 1을 더해줌)
 var currentYear = currentDate.getFullYear();
+var currentDay = currentDate.getDay();
+var date =
+  currentYear.toString() + padNumber(currentMonth) + padNumber(currentDay);
+//날짜 YYYYMMDD형식으로 보이게 하기
+function padNumber(num) {
+  return num.toString().padStart(2, "0");
+}
 
 // 월출, 월몰 api
 // 월출 API
@@ -184,7 +191,7 @@ var queryParams1 =
   "=" +
   "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams1 +=
-  "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent("20230501");
+  "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent(date); //YYYYMMDD로 보이게 하기
 queryParams1 +=
   "&" + encodeURIComponent("location") + "=" + encodeURIComponent("서울");
 xhr1.open("GET", url1 + queryParams1);

@@ -1,7 +1,7 @@
 /* 수정할 것
 1. 로고 클릭시 메인페이지 이동 
-2. 지역 추가하기
-3. 지역 선택하면 메인에 있는 월출·월몰 시각이 지역에 맞게 보여주기 */
+2. 메뉴 클릭시 메뉴 이동
+3. 버튼에 맞는 링크 연결 */
 
 document.body.style.margin = "0px";
 
@@ -89,6 +89,17 @@ let div2div2 = maker("div", "id", "div2_2", div2);
 const div2_1 = document.getElementById("div2_1");
 const div2_2 = document.getElementById("div2_2");
 
+// div2_1 스타일
+div2_1.style.height = "20%";
+div2_1.style.width = "100%";
+div2_1.style.marginTop = "12%";
+// div2_1.style.marginLeft = "10%";
+
+// div2_2 스타일
+div2_2.style.height = "30%";
+div2_2.style.width = "100%";
+div2_2.style.marginTop = "5%";
+
 function makerChild(tagName, setName, setValue, parent) {
   const element = document.createElement(tagName);
   element.setAttribute(setName, setValue);
@@ -96,6 +107,54 @@ function makerChild(tagName, setName, setValue, parent) {
 }
 // div2안에 있는 페이지로 이동, 탈퇴 할 수 있는 버튼 4개
 let div2c_1 = makerChild("button", "id", "user", div2_1);
-let div2c_2 = makerChild("button", "id", "w", div2_1);
+let div2c_2 = makerChild("button", "id", "writing", div2_1);
 let div2c_3 = makerChild("button", "id", "logout", div2_2);
-let div2c_4 = makerChild("button", "id", "d", div2_2);
+let div2c_4 = makerChild("button", "id", "withdrawal", div2_2);
+
+// div2c 버튼1 스타일
+const div2cButton1 = document.getElementById("user");
+div2cButton1.style.height = "60%";
+div2cButton1.style.width = "40%";
+div2cButton1.style.backgroundColor = "#537DBD";
+div2cButton1.style.border = "none";
+div2cButton1.style.marginLeft = "8%";
+div2cButton1.style.borderRadius = "30px";
+div2cButton1.textContent = "회원정보";
+div2cButton1.style.fontSize = "20px";
+div2cButton1.style.color = "white";
+
+// div2c 버튼2 스타일
+const div2cButton2 = document.getElementById("writing");
+div2cButton2.style.height = "60%";
+div2cButton2.style.width = "40%";
+div2cButton2.style.backgroundColor = "#537DBD";
+div2cButton2.style.border = "none";
+div2cButton2.style.marginLeft = "5%";
+div2cButton2.style.borderRadius = "30px";
+div2cButton2.textContent = "글관리";
+div2cButton2.style.fontSize = "20px";
+div2cButton2.style.color = "white";
+
+// div2c 버튼3 스타일
+const div2cButton3 = document.getElementById("logout");
+div2cButton3.style.height = "40%";
+div2cButton3.style.width = "40%";
+div2cButton3.style.backgroundColor = "#537DBD";
+div2cButton3.style.border = "none";
+div2cButton3.style.marginLeft = "8%";
+div2cButton3.style.borderRadius = "30px";
+div2cButton3.textContent = "로그아웃";
+div2cButton3.style.fontSize = "20px";
+div2cButton3.style.color = "white";
+
+// div2c 버튼4 스타일
+const div2cButton4 = document.getElementById("withdrawal");
+div2cButton4.style.height = "40%";
+div2cButton4.style.width = "40%";
+div2cButton4.style.backgroundColor = "#537DBD";
+div2cButton4.style.border = "none";
+div2cButton4.style.marginLeft = "5%";
+div2cButton4.style.borderRadius = "30px";
+div2cButton4.textContent = "탈퇴";
+div2cButton4.style.fontSize = "20px";
+div2cButton4.style.color = "white";

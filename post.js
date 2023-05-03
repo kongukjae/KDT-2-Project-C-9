@@ -118,9 +118,9 @@ div4.style.borderBottom = "1px solid  black";
 // fix
 // 모달창 만들기
 // div id=modal, div id=modalText, button id=modalClose,
-let a = maker("div", "id", "modal", div4);
-const modal = document.getElementById("modal");
-let b = maker("div", "id", "modalText", modal);
+/* let a = maker("div", "id", "modal", div4);
+const modal = document.getElementById("modal"); */
+let b = maker("div", "id", "modalText", div1modal);
 const modalText = document.getElementById("modalText");
 let c = maker("h3", "id", "h3", modalText);
 const modalTitle = document.getElementById("h3");
@@ -128,7 +128,7 @@ modalTitle.innerText = "카테고리 설명";
 let d = maker("button", "id", "modalClose", modalText);
 const modalClose = document.getElementById("modalClose");
 modalClose.innerHTML = "&times;";
-let e = maker("div", "id", "modalDayOne", modal);
+let e = maker("div", "id", "modalDayOne", div1modal);
 const modalDayOne = document.getElementById("modalDayOne");
 let f = maker("p", "id", "p1", modalDayOne);
 const p1 = document.getElementById("p1");
@@ -136,7 +136,27 @@ p1.innerText = "자랑: 자신이 찍은 사진을 올리는 게시글";
 let g = maker("p", "id", "p2", modalDayOne);
 const p2 = document.getElementById("p2");
 p2.innerText = "정보: 자신이 공유하고 싶은 내용을 올리는 게시글";
+// 모달 modalBackground만들기
+let h = maker("div", "id", "back", div4);
+const back = document.getElementById("back");
+
 //모달창 스타일
+// 뒤
+back.style.position = "fixed";
+back.style.top = "0";
+back.style.left = "0";
+back.style.width = "100%";
+back.style.height = "100%";
+back.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+back.style.display = "none";
+back.style.zIndex = "1";
+
+// back.classList.add("active");
+// back.style.display = "block";
+
+// 모달창
+
+//모달창 닫기 버튼
 
 // ⭐div5 스타일
 const div5 = document.getElementById("div5");

@@ -115,12 +115,34 @@ div4.style.height = "55%";
 div4.style.backgroundColor = "#D9D9D9";
 div4.style.borderBottom = "1px solid  black";
 
+// fix
+// 모달창 만들기
+// div id=modal, div id=modalText, button id=modalClose,
+let a = maker("div", "id", "modal", div4);
+const modal = document.getElementById("modal");
+let b = maker("div", "id", "modalText", modal);
+const modalText = document.getElementById("modalText");
+let c = maker("h3", "id", "h3", modalText);
+const modalTitle = document.getElementById("h3");
+modalTitle.innerText = "카테고리 설명";
+let d = maker("button", "id", "modalClose", modalText);
+const modalClose = document.getElementById("modalClose");
+modalClose.innerHTML = "&times;";
+let e = maker("div", "id", "modalDayOne", modal);
+const modalDayOne = document.getElementById("modalDayOne");
+let f = maker("p", "id", "p1", modalDayOne);
+const p1 = document.getElementById("p1");
+p1.innerText = "자랑: 자신이 찍은 사진을 올리는 게시글";
+let g = maker("p", "id", "p2", modalDayOne);
+const p2 = document.getElementById("p2");
+p2.innerText = "정보: 자신이 공유하고 싶은 내용을 올리는 게시글";
+//모달창 스타일
+
 // ⭐div5 스타일
 const div5 = document.getElementById("div5");
 div5.style.height = "12%";
 div5.style.backgroundColor = "#D9D9D9";
 //div5안에 있는 input, 미리보기
-//fix
 let input1 = maker("input", "id", "file", div5); //모달창
 
 // input 스타일설정

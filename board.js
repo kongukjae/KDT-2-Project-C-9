@@ -21,21 +21,55 @@ for (let i = 1; i < 5; i++) {
 const div1 = document.getElementById("div1");
 div1.style.height = "15%";
 div1.style.display = "flex";
-div1.style.justifyContent = "space-between"; //버튼을 양 끝으로 이동
-//div1안에 있는 버튼1(logo), 버튼2(menu)
+div1.style.flexDirection = "column";
+div1.style.backgroundColor = "#537DBD";
+// div1.style.justifyContent = "space-between"; //버튼을 양 끝으로 이동
+div1.style.alignItems = "center"; //가운데
+div1.style.position = "relative";
+// div1.style.justifyContent = "center";
+
+//div1안에 있는 버튼1(logo),텍스트
 let button1 = maker("button", "id", "button1", div1);
+let text1 = maker("p", "id", "text1", div1);
 let button2 = maker("button", "id", "button2", div1);
+
 // 버튼1 스타일
 const div1button = document.getElementById("button1");
 div1button.style.height = "45%";
 div1button.style.width = "25%";
-div1button.style.margin = "auto"; //버튼을 가운데로 이동
+div1button.style.marginTop = "7%";
+// 버튼1 이미지
+div1button.style.backgroundImage = "url('./img/logo.png')";
+// div1button.style.backgroundSize = "cover";
+div1button.style.backgroundColor = "transparent"; //버튼 색 투명
+div1button.style.border = "none"; //테두리 X
+div1button.style.backgroundSize = "contain"; //이미지가 다 보이게
+div1button.style.backgroundRepeat = "no-repeat"; //이미지 반복X
+
+// 텍스트 스타일
+const div1text = document.getElementById("text1");
+div1text.style.height = "5%";
+div1text.style.width = "25%";
+div1text.textContent = "마이페이지";
+div1text.style.color = "white";
+div1text.style.fontWeight = "bold";
+div1text.style.fontSize = "18px";
+div1text.style.textAlign = "center";
+div1text.style.margin = "0";
 
 // 버튼2 스타일
-const div2button = document.getElementById("button2");
-div2button.style.height = "25%";
-div2button.style.width = "10%";
-div2button.style.marginTop = "2%"; //위 마진
+const div1button2 = document.getElementById("button2");
+div1button2.style.height = "25%";
+div1button2.style.width = "10%";
+div1button2.style.marginTop = "2%"; //위 마진
+div1button2.style.position = "absolute";
+div1button2.style.top = "0";
+div1button2.style.right = "0";
+//버튼2 이미지
+div1button2.style.backgroundImage = "url('./img/menu.png')";
+div1button2.style.backgroundSize = "cover";
+div1button2.style.backgroundColor = "transparent"; //버튼 색 투명
+div1button2.style.border = "none"; //테두리 X
 
 // ⭐div2 스타일
 const div2 = document.getElementById("div2");
@@ -47,14 +81,30 @@ div2.style.alignItems = "flex-end"; //텍스트와 버튼을 하단 배치
 //div2안에 있는 버튼3(카테고리), 버튼4(쓰기)
 let div2_1 = maker("button", "id", "button3", div2);
 let div2_2 = maker("button", "id", "button4", div2);
+
 // 버튼3 스타일
-const div3button = document.getElementById("button3");
-div3button.style.height = "55%";
-div3button.style.width = "10%";
+const div2button = document.getElementById("button3");
+div2button.style.height = "55%";
+div2button.style.width = "10%";
+div2button.style.marginBottom = "1%";
+//버튼3 이미지
+div2button.style.backgroundImage = "url('./img/tag.png')";
+div2button.style.backgroundColor = "transparent"; //버튼 색 투명
+div2button.style.border = "none"; //테두리 X
+div2button.style.backgroundSize = "contain"; //이미지가 다 보이게
+div2button.style.backgroundRepeat = "no-repeat"; //이미지 반복X
+
 // 버튼4 스타일
-const div4button = document.getElementById("button4");
-div4button.style.height = "55%";
-div4button.style.width = "10%";
+const div2button2 = document.getElementById("button4");
+div2button2.style.height = "55%";
+div2button2.style.width = "10%";
+div2button2.style.marginBottom = "1%";
+//버튼4 이미지
+div2button2.style.backgroundImage = "url('./img/writing.png')";
+div2button2.style.backgroundColor = "transparent"; //버튼 색 투명
+div2button2.style.border = "none"; //테두리 X
+div2button2.style.backgroundSize = "contain"; //이미지가 다 보이게
+div2button2.style.backgroundRepeat = "no-repeat"; //이미지 반복X
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");
@@ -136,10 +186,20 @@ div4.style.justifyContent = "center";
 let div4_1 = maker("button", "id", "button5", div4);
 let div4_2 = maker("button", "id", "button6", div4);
 // 버튼5 스타일
-const div5button = document.getElementById("button5");
-div5button.style.height = "45%";
-div5button.style.width = "15%";
+const div4button = document.getElementById("button5");
+div4button.style.height = "45%";
+div4button.style.width = "15%";
+div4button.textContent = "이전";
+// div4button.style.fontSize = "";
+div4button.style.backgroundColor = "transparent";
+div4button.style.border = "none"; //테두리 X
+div4button.style.color = "white";
+
 // 버튼6 스타일
-const div6button = document.getElementById("button6");
-div6button.style.height = "45%";
-div6button.style.width = "15%";
+const div4button2 = document.getElementById("button6");
+div4button2.style.height = "45%";
+div4button2.style.width = "15%";
+div4button2.textContent = "다음";
+div4button2.style.backgroundColor = "transparent";
+div4button2.style.border = "none";
+div4button2.style.color = "white";

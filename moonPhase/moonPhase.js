@@ -10,10 +10,7 @@ var xhr = new XMLHttpRequest();
 var url =
   "http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo"; /*URL*/
 var queryParams =
-  "?" +
-  encodeURIComponent("serviceKey") +
-  "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D"; /*Service Key*/
+  "?" + encodeURIComponent("serviceKey") + "=" + "키값"; /*Service Key*/
 queryParams +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear);
 queryParams +=

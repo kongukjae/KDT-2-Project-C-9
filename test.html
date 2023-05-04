@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>별자리</title>
+</head>
+
+<body>
+  <script>
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth() + 1;
+
+    if ([12, 1, 2].includes(currentMonth)) {
+      console.log("겨울철 별자리: 황소자리, 쌍둥이자리");
+    } else if ([3, 4, 5].includes(currentMonth)) {
+      console.log("봄철 별자리: 사자자리, 처녀자리");
+    } else if ([6, 7, 8].includes(currentMonth)) {
+      console.log("여름철 별자리: 거문고자리, 전갈자리");
+    } else if ([9, 10, 11].includes(currentMonth)) {
+      console.log("가을철 별자리: 물병자리, 양자리");
+    } else {
+      console.log("현재 월을 확인할 수 없습니다.");
+    }
+
+  </script>
+</body>
+
+</html>

@@ -50,7 +50,7 @@ div1button.style.backgroundRepeat = "no-repeat"; //이미지 반복X
 const div1text = document.getElementById("text1");
 div1text.style.height = "5%";
 div1text.style.width = "25%";
-div1text.textContent = "마이페이지";
+div1text.textContent = "노래 소개";
 div1text.style.color = "white";
 div1text.style.fontWeight = "bold";
 div1text.style.fontSize = "18px";
@@ -85,28 +85,29 @@ const div2_1 = document.getElementById("div2_1");
 const div2_2 = document.getElementById("div2_2");
 
 // div2_1 스타일
-div2_1.style.height = "80%";
+div2_1.style.height = "55%";
 div2_1.style.width = "15%";
-// div2_1.style.marginTop = "12%";
+div2_1.style.marginTop = "2%";
 // div2_1.style.marginLeft = "10%";
 
 // fix
 //div2_1 이미지
 div2_1.style.backgroundImage = "url('./img/notice.png')";
-div2_1.style.backgroundSize = "cover"; //수정해야함
+div2_1.style.backgroundSize = "contain";
+div2_1.style.backgroundRepeat = "no-repeat";
 
 // div2_2 스타일
-div2_2.style.height = "30%";
+div2_2.style.height = "100%";
 div2_2.style.width = "85%";
 div2_2.style.marginTop = "5%";
+div2_2.textContent = "노래는 천체(행성, 별 등)와 관련된 노래만 추천 가능!";
+div2_2.style.fontSize = "13px";
+div2_2.style.margin = "0";
+div2_2.style.marginTop = "2.5%";
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");
 div3.style.height = "85%";
 div3.style.backgroundColor = "#325489";
 
-function makerChild(tagName, setName, setValue, parent) {
-  const element = document.createElement(tagName);
-  element.setAttribute(setName, setValue);
-  parent.appendChild(element);
-}
+// div3에 div를 또 나누기

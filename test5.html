@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>월령 API</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById("root");
+
+
+    var xhr = new XMLHttpRequest();
+    var url = 'http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo'; /*URL*/
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + '키값'; /*Service Key*/
+    queryParams += '&' + encodeURIComponent('solYear') + '=' + encodeURIComponent('2023');
+    queryParams += '&' + encodeURIComponent('solMonth') + '=' + encodeURIComponent('05');
+    queryParams += '&' + encodeURIComponent('solDay') + '=' + encodeURIComponent('04');
+    xhr.open('GET', url + queryParams);
+    xhr.onreadystatechange = function () {
+      if (this.readyState == 4) {
+        alert('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' + this.responseText);
+      }
+    };
+
+    xhr.send('');
+  </script>
+</body>
+
+</html>

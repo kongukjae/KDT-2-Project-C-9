@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>별자리</title>
+</head>
+
+<body>
+  <div id="modal">
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+  </div>
+  <script>
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth() + 1;
+    var seasonImage = "";
+    var seasonDescription = "";
+    var seasonContent = "";
+
+    if ([12, 1, 2].includes(currentMonth)) {
+      seasonImage = "winter_image.png";
+      seasonDescription = "겨울철 별자리: 황소자리, 쌍둥이자리";
+      seasonContent = "황소자리:별자리에서 가장 밝은 별로 1등성 알데바란이 있어서 찾기 어렵지 않다. 오리온자리의 허리띠인 삼형제별을 위쪽으로 쭉 이어가다보면 만나는 유난히 빛나는 붉은 별이 알데바란이다. 알데바란 근처의 별들을 V자 모양으로 잇고, 각 끄트머리를 길게 연장해서 하늘에 Y 모양을 만들면 그것이 바로 황소자리이다."
+    } else if ([3, 4, 5].includes(currentMonth)) {
+      seasonImage = "spring_image.png";
+      seasonDescription = "봄철 별자리: 사자자리, 처녀자리";
+      seasonContent = "사자자리:황도 12궁에 속하는 별자리이다. 서쪽의 게자리와 동쪽의 처녀자리 사이에 놓여 있다. 봄철 초저녁 하늘에서 찾아볼 수 있는 별자리이다."
+    } else if ([6, 7, 8].includes(currentMonth)) {
+      seasonImage = "summer_image.png";
+      seasonDescription = "여름철 별자리: 거문고자리, 전갈자리";
+      seasonContent = "거문고자리: 프톨레마이오스의 48가지 별자리 중 하나로, 국제천문연맹의 88가지 현대 별자리 중 하나";
+    } else if ([9, 10, 11].includes(currentMonth)) {
+      seasonImage = "autumn_image.png";
+      seasonDescription = "가을철 별자리: 사수자리, 물병자리, 양자리";
+      seasonContent = "사수자리:황도 12궁의 하나이며, 전갈자리의 동쪽, 염소자리의 서쪽에 있는 별자리";
+    } else {
+      console.log("현재 월을 확인할 수 없습니다.");
+    }
+
+    var seasonImageElement = document.getElementById("two");
+    seasonImageElement.innerHTML = "<img src='" + seasonImage + "' alt='별자리 이미지'>";
+
+    var seasonDescriptionElement = document.getElementById("three");
+    seasonDescriptionElement.textContent = seasonContent;
+
+    var oneElement = document.getElementById("one");
+    oneElement.innerHTML = "";
+    oneElement.innerHTML += "<p>" + seasonDescription + "</p>";
+
+  </script>
+</body>
+
+</html>

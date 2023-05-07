@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+ body {
+      text-align: center;
+    }
+    
+    #root {
+      background-color: #325489;
+      height: 844px;
+      margin: 0 auto;
+      max-width: 390px;
+      width: 100%;
+    }
+
+    #apod-image {
+      width: 100%;
+      height: 70%;
+    }
+
+    #apod-title,
+    #apod-explanation {
+      height: 30%;
+      background-color: #D9D9D9;
+      margin: 0;
+
+    }
+    @media (min-width: 391px) {
+      body {
+        background-color: #EDEDED;
+      }
+      
+      #root {
+        background-color: #EDEDED;
+        height: 844px;
+        margin: 0 auto;
+        max-width: 960px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img id="apod-image" src="" alt="APOD" onclick="goToMain()">
+    <p id="apod-title"></p>
+    <p id="apod-explanation"></p>
+  </div>
+
+  <script>
+    const apiKey = "키값"; // 나사 api 키 값 넣기
+    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // API에서 받아온 데이터 처리
+        console.log(data);
+        const apodImage = data.url;
+        const apodTitle = data.title;
+        const apodExplanation = data.explanation;
+
+        const imageElement = document.getElementById("apod-image");
+        const titleElement = document.getElementById("apod-title");
+        const explanationElement = document.getElementById("apod-explanation");
+
+        imageElement.src = apodImage;
+        titleElement.textContent = apodTitle;
+        explanationElement.textContent = apodExplanation;
+      })
+      .catch(error => {
+        // API 요청 실패 시 처리
+        console.error(error);
+      });
+      function goToMain() {
+    location.href = "main.html";
+  }
+  </script>
+</body>
+
+</html>

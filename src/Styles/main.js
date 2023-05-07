@@ -44,6 +44,7 @@ div1button.addEventListener("click", function () {
   // 로고 클릭 시 메인페이지 새로고침
   window.location.href = "main.html";
 });
+
 // 버튼2 스타일
 const div1button2 = document.getElementById("button2");
 div1button2.style.height = "25%";
@@ -103,6 +104,45 @@ div2text4.style.width = "100%";
 div2text4.style.height = "10%";
 div2text4.style.margin = "1%";
 div2text4.style.textAlign = "left"; // 왼쪽 정렬
+
+// 🍔메뉴창 
+const menuContainer = document.createElement("div");
+root.appendChild(menuContainer);
+menuContainer.style.position = "fixed";
+menuContainer.style.top = "0";
+menuContainer.style.right = "-50%";
+menuContainer.style.height = "100%";
+menuContainer.style.width = "50%";
+menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+menuContainer.style.transition = "all 0.3s ease-in-out";
+
+const menuItems = ["게시판", "노래소개"];
+for (let i = 0; i < menuItems.length; i++) {
+  const menuItem = document.createElement("a");
+  menuItem.textContent = menuItems[i];
+  menuItem.href = i === 0 ? "board.html" : "music.html";
+  menuItem.style.display = "block";
+  menuItem.style.padding = "20px";
+  menuItem.style.fontSize = "20px";
+  menuItem.style.color = "#000";
+  menuItem.style.textDecoration = "none";
+  menuItem.addEventListener("click", function() {
+    // Hide menu after clicking on a menu item
+    menuContainer.style.right = "-50%";
+  });
+  menuContainer.appendChild(menuItem);
+}
+
+div1button2.addEventListener("click", function() {
+  
+  if (menuContainer.style.right === "-50%") {
+    // 보이기
+    menuContainer.style.right = "0";
+  } else {
+    // 숨기기
+    menuContainer.style.right = "-50%";
+  }
+});
 
 
 // ⭐div3 스타일

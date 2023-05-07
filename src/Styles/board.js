@@ -54,7 +54,7 @@ div1button.addEventListener("click", function () {
 const div1text = document.getElementById("text1");
 div1text.style.height = "5%";
 div1text.style.width = "25%";
-div1text.textContent = "마이페이지";
+div1text.textContent = "게시판";
 div1text.style.color = "white";
 div1text.style.fontWeight = "bold";
 div1text.style.fontSize = "18px";

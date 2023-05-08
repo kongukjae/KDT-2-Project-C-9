@@ -114,10 +114,19 @@ div3.style.backgroundColor = "#D9D9D9";
 div3.style.borderBottom = "1px solid  black";
 // div3안에 있는 input창을 넣는 곳과 제목 input
 let div3_1 = maker("div", "id", "category", div3);
-let div3_2 = maker("div", "id", "title", div3);
+let div3_2 = maker("textarea", "id", "title", div3);
 
+// 카테고리(라디오 버튼)
 const category = document.getElementById("category");
-
+category.style.width = "100%";
+category.style.height = "50%";
+// 제목
+const title = document.getElementById("title");
+title.style.width = "100%";
+title.style.height = "50%";
+title.style.backgroundColor = "#D9D9D9";
+title.placeholder = "제목을 입력하세요.(글자수 20글자 제한)";
+title.maxLength = 20; //글자수 제한
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");
 div4.style.height = "55%";
@@ -125,16 +134,13 @@ div4.style.width = "100%";
 div4.style.backgroundColor = "#D9D9D9";
 div4.style.borderBottom = "1px solid  black";
 
-// fix
-// 내용 input추가
-/* let div4text = maker("input", "id", "text", div4);
-div4text.setAttribute("type", "text"); */
-// let div4text = maker("input", "type", "text", div4);
+// 내용  입력
 let div4text = maker("textarea", "id", "text", div4);
-
 const content = document.getElementById("text");
-div4text.style.width = "1000px";
-div4text.style.height = "80px";
+content.style.width = "100%";
+content.style.height = "98%";
+content.style.backgroundColor = "#D9D9D9";
+content.placeholder = "내용을 입력하세요.";
 
 // 카테고리 안내창
 function showModal() {

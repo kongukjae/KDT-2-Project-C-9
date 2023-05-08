@@ -154,6 +154,17 @@ var options = [
   { value: "option12", text: "고령" },
   { value: "option13", text: "고성" },
   { value: "option14", text: "고양" },
+  { value: "option15", text: "대구" },
+  { value: "option16", text: "대전" },
+  { value: "option17", text: "독도" },
+  { value: "option18", text: "부산" },
+  { value: "option19", text: "서울" },
+  { value: "option20", text: "세종" },
+  { value: "option21", text: "인천" },
+  { value: "option22", text: "제주" },
+  { value: "option23", text: "충주" },
+  { value: "option24", text: "포항" },
+  { value: "option25", text: "해남" },
 ];
 
 for (var i = 0; i < options.length; i++) {
@@ -173,3 +184,8 @@ div2input4.style.width = "70%";
 div2input4.style.marginTop = "12%";
 div2input4.style.marginLeft = "14%";
 div2input4.value = "회원가입";
+
+div2input4.addEventListener("click", function () {
+  // 회원가입 완료-> 메인 페이지로 이동
+  window.location.href = "main.html";
+});

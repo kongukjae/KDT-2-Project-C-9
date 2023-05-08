@@ -95,9 +95,6 @@ div2input1.style.width = "70%";
 div2input1.style.marginLeft = "14%"; //화면을 가운데로 맞추기 위해 넣음
 // div2input1.style.textAlign = "center";
 
-
-
-
 // PW
 const div2text2 = document.getElementById("pw");
 div2text2.textContent = "PW";
@@ -131,3 +128,7 @@ div2button1.style.marginLeft = "14%";
 
 div2button1.style.backgroundColor = "transparent"; //버튼 색 투명
 div2button1.style.border = "none"; //테두리 X
+div2button1.addEventListener("click", function () {
+  // 회원가입 클릭 시 회원가입 페이지로 이동
+  window.location.href = "sign-up.html";
+});

@@ -312,33 +312,30 @@ function showModal() {
   modalBack.style.zIndex = "9999";
 
   const modalTitle = document.createElement("p");
-  modalTitle.textContent = "카테고리 설명";
+  modalTitle.textContent = "봄철 별자리";
   modalTitle.style.fontWeight = "bold";
 
   const modalContent = document.createElement("div");
-  modalContent.style.backgroundColor = "#C0DFF0";
-  modalContent.style.padding = "20px";
+  modalContent.style.backgroundColor = "#D9D9D9";
+  // modalContent.style.padding = "20px";
   modalContent.style.fontSize = "18px";
+  modalContent.style.width = "390px";
   modalContent.style.textAlign = "center";
 
-  /*   const p1 = document.createElement("p");
-  p1.textContent = "자랑: 자신이 찍은 사진을 올리는 게시글";
+  const img1 = document.createElement("img");
+  img1.setAttribute("id", "img1");
+  img1.style.width = "20%";
+  img1.style.height = "30%";
+  img1.src = "/img/leo.png";
+
+  const p1 = document.createElement("p");
+  p1.textContent =
+    "사자자리:황도 12궁에 속하는 별자리이다. 서쪽의 게자리와 동쪽의 처녀자리 사이에 놓여 있다. 봄철 초저녁 하늘에서 찾아볼 수 있는 별자리이다.";
   p1.style.fontSize = "15px";
-  const p2 = document.createElement("p");
-  p2.textContent = "정보: 자신이 공유하고 싶은 내용을 올리는 게시글";
-  p2.style.fontSize = "15px";
-  const p3 = document.createElement("p");
-  p3.textContent = "궁금: 우주와 관련된 궁금한 점을 묻는 게시글";
-  p3.style.fontSize = "15px";
-  const p4 = document.createElement("p");
-  p4.textContent = "기타: 그외 게시글";
-  p4.style.fontSize = "15px";
- */
+
   modalContent.appendChild(modalTitle);
-  /*   modalContent.appendChild(p1);
-  modalContent.appendChild(p2);
-  modalContent.appendChild(p3);
-  modalContent.appendChild(p4); */
+  modalContent.appendChild(img1);
+  modalContent.appendChild(p1);
 
   modalBack.appendChild(modalContent);
 

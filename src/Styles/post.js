@@ -120,6 +120,26 @@ let div3_2 = maker("textarea", "id", "title", div3);
 const category = document.getElementById("category");
 category.style.width = "100%";
 category.style.height = "50%";
+
+const radioLabels = ["자랑", "정보", "궁금", "기타"];
+const colors = ["#EB691F", "green", "blue", "#B00DBE"];
+for (let i = 0; i < radioLabels.length; i++) {
+  const radioButton = document.createElement("input");
+  radioButton.type = "radio";
+  radioButton.name = "category";
+  radioButton.value = radioLabels[i];
+  radioButton.id = "radio_" + i;
+
+  const label = document.createElement("label");
+  label.innerHTML = radioLabels[i];
+  label.setAttribute("for", "radio_" + i);
+
+  category.appendChild(radioButton);
+  category.appendChild(label);
+  label.style.color = colors[i];
+  label.style.fontWeight = "bold";
+}
+
 // 제목
 const title = document.getElementById("title");
 title.style.width = "100%";

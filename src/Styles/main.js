@@ -73,7 +73,6 @@ let div2_4 = maker("p", "id", "timeA", div2);
 let div2_5 = maker("p", "id", "event", div2);
 let div2_6 = maker("p", "id", "eventA", div2);
 
-
 // 텍스트 스타일
 const div2text = document.getElementById("title");
 div2text.style.width = "40%";
@@ -82,7 +81,6 @@ div2text.style.margin = "0";
 div2text.textContent = "이달의 천문 현상";
 div2text.style.fontWeight = "bold";
 div2text.style.textAlign = "left"; // 왼쪽 정렬
-
 
 const div2text2 = document.getElementById("titleA"); //api 텍스트
 div2text2.style.width = "100%";
@@ -98,14 +96,13 @@ div2text3.textContent = "관측 할 수 있는 시간과 설명";
 div2text3.style.fontWeight = "bold";
 div2text3.style.textAlign = "left"; // 왼쪽 정렬
 
-
 const div2text4 = document.getElementById("timeA"); //api 텍스트
 div2text4.style.width = "100%";
 div2text4.style.height = "10%";
 div2text4.style.margin = "1%";
 div2text4.style.textAlign = "left"; // 왼쪽 정렬
 
-// 🍔메뉴창 
+// 🍔메뉴창
 const menuContainer = document.createElement("div");
 root.appendChild(menuContainer);
 menuContainer.style.position = "fixed";
@@ -116,19 +113,18 @@ menuContainer.style.width = "50%";
 menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
 menuContainer.style.transition = "all 0.3s ease-in-out";
 
-
-const menuItems = ["게시판", "노래소개", "마이페이지","로그인/회원가입"]; 
+const menuItems = ["게시판", "노래소개", "마이페이지", "로그인/회원가입"];
 for (let i = 0; i < menuItems.length; i++) {
   const menuItem = document.createElement("a");
   menuItem.textContent = menuItems[i];
-  
+
   if (i === 0) {
     menuItem.href = "board.html";
   } else if (i === 1) {
     menuItem.href = "music.html";
-  }else if (i === 2) {
+  } else if (i === 2) {
     menuItem.href = "mypage.html";
-  }  else {
+  } else {
     menuItem.href = "sign-in.html";
   }
 
@@ -137,22 +133,19 @@ for (let i = 0; i < menuItems.length; i++) {
   menuItem.style.fontSize = "20px";
   menuItem.style.color = "#000";
   menuItem.style.textDecoration = "none";
-  menuItem.addEventListener("click", function() {
+  menuItem.addEventListener("click", function () {
     menuContainer.style.right = "-50%";
   });
   menuContainer.appendChild(menuItem);
 }
 
-
-div1button2.addEventListener("click", function() {
-  
+div1button2.addEventListener("click", function () {
   if (menuContainer.style.right === "-50%") {
     menuContainer.style.right = "0";
   } else {
     menuContainer.style.right = "-50%";
   }
 });
-
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");
@@ -185,6 +178,10 @@ div3button.style.backgroundImage = "url('/src/img/glass.png')";
 div3button.style.backgroundSize = "cover";
 div3button.style.backgroundColor = "transparent"; //버튼 색 투명
 div3button.style.border = "none"; //테두리 X
+//나사 창 보이기
+div3button.addEventListener("click", function () {
+  window.location.href = "nasa.html";
+});
 
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");
@@ -215,13 +212,14 @@ var currentMonth = currentDate.getMonth() + 1; // 해당하는 달 가져오기 
 var currentYear = currentDate.getFullYear();
 var currentDay = currentDate.getDay();
 var date =
-  currentYear.toString() + padNumber(currentMonth) + padNumber(currentDay === 0 ? 7 : currentDay);
+  currentYear.toString() +
+  padNumber(currentMonth) +
+  padNumber(currentDay === 0 ? 7 : currentDay);
 
 //날짜 YYYYMMDD형식으로 보이게 하기
 function padNumber(num) {
   return num.toString().padStart(2, "0");
 }
-
 
 // 월출, 월몰 api
 // 월출 API

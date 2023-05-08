@@ -102,7 +102,7 @@ div2text4.style.height = "10%";
 div2text4.style.margin = "1%";
 div2text4.style.textAlign = "left"; // 왼쪽 정렬
 
-// 🍔메뉴창
+// 메뉴창
 const menuContainer = document.createElement("div");
 root.appendChild(menuContainer);
 menuContainer.style.position = "fixed";
@@ -110,7 +110,7 @@ menuContainer.style.top = "0";
 menuContainer.style.right = "-50%";
 menuContainer.style.height = "100%";
 menuContainer.style.width = "50%";
-menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)"; //투명으로 만듦
 menuContainer.style.transition = "all 0.3s ease-in-out";
 
 const menuItems = ["게시판", "노래소개", "마이페이지", "로그인/회원가입"];
@@ -118,6 +118,7 @@ for (let i = 0; i < menuItems.length; i++) {
   const menuItem = document.createElement("a");
   menuItem.textContent = menuItems[i];
 
+  // 페이지 추가한다면 숫자 늘리면 된다
   if (i === 0) {
     menuItem.href = "board.html";
   } else if (i === 1) {
@@ -134,7 +135,7 @@ for (let i = 0; i < menuItems.length; i++) {
   menuItem.style.color = "#000";
   menuItem.style.textDecoration = "none";
   menuItem.addEventListener("click", function () {
-    menuContainer.style.right = "-50%";
+    menuContainer.style.right = "-50%"; //역방향으로 이동
   });
   menuContainer.appendChild(menuItem);
 }
@@ -314,7 +315,7 @@ function showModal() {
   modalTitle.style.fontWeight = "bold";
 
   const modalContent = document.createElement("div");
-  modalContent.style.backgroundColor = "#D9D9D9";
+  modalContent.style.backgroundColor = "#F7F9DF";
   // modalContent.style.padding = "20px";
   modalContent.style.fontSize = "18px";
   modalContent.style.width = "390px";

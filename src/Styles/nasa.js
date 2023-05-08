@@ -57,7 +57,7 @@ div3.style.backgroundColor = "#BFBDBD";
 div3.style.overflowY = "scroll"; //설명이 길 경우 스크롤할 수 있게 만듦
 
 // 나사 API
-const apiKey = "UUodkOYfvl1Sjbaa8vlJ051fxfGfr8QiSZhVef1i"; // 나사 api 키 값 넣기
+const apiKey = "키값"; // 나사 api 키 값 넣기
 const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
 fetch(apiUrl)

@@ -103,6 +103,11 @@ const div2button2 = document.getElementById("button4");
 div2button2.style.height = "55%";
 div2button2.style.width = "10%";
 div2button2.style.marginBottom = "1%";
+div2button2.addEventListener("click", function () {
+  // 글쓰기 버튼 클릭시 게시글 작성으로 이동
+  window.location.href = "post.html";
+});
+
 //버튼4 이미지
 div2button2.style.backgroundImage = "url('/src/img/writing.png')";
 div2button2.style.backgroundColor = "transparent"; //버튼 색 투명
@@ -207,3 +212,71 @@ div4button2.textContent = "다음";
 div4button2.style.backgroundColor = "transparent";
 div4button2.style.border = "none";
 div4button2.style.color = "white";
+
+// 🍔메뉴창
+const menuContainer = document.createElement("div");
+root.appendChild(menuContainer);
+menuContainer.style.position = "fixed";
+menuContainer.style.top = "0";
+menuContainer.style.right = "-50%";
+menuContainer.style.height = "100%";
+menuContainer.style.width = "50%";
+menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)"; //투명으로 만듦
+menuContainer.style.transition = "all 0.3s ease-in-out";
+
+const menuItems = ["게시판", "노래소개", "마이페이지", "로그인/회원가입"];
+for (let i = 0; i < menuItems.length; i++) {
+  const menuItem = document.createElement("a");
+  menuItem.textContent = menuItems[i];
+
+  // 페이지 추가한다면 숫자 늘리면 된다
+  if (i === 0) {
+    menuItem.href = "board.html";
+  } else if (i === 1) {
+    menuItem.href = "music.html";
+  } else if (i === 2) {
+    menuItem.href = "mypage.html";
+  } else {
+    menuItem.href = "sign-in.html";
+  }
+
+  menuItem.style.display = "block";
+  menuItem.style.padding = "20px";
+  menuItem.style.fontSize = "20px";
+  menuItem.style.color = "#000";
+  menuItem.style.textDecoration = "none";
+  menuItem.addEventListener("click", function () {
+    menuContainer.style.right = "-50%"; //역방향으로 이동
+  });
+  menuContainer.appendChild(menuItem);
+}
+
+div1button2.addEventListener("click", function () {
+  if (menuContainer.style.right === "-50%") {
+    menuContainer.style.right = "0";
+    // 메뉴창 제외 다른 것 클릭시 메뉴창이 닫아짐
+    const modalBack0 = document.createElement("div");
+    modalBack0.style.position = "fixed";
+    modalBack0.style.top = "0";
+    modalBack0.style.left = "0";
+    modalBack0.style.width = "100%";
+    modalBack0.style.height = "100%";
+    modalBack0.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    modalBack0.style.display = "flex";
+    modalBack0.style.justifyContent = "center";
+    modalBack0.style.alignItems = "center";
+    modalBack0.style.zIndex = "1";
+
+    modalBack0.appendChild(menuContainer);
+
+    document.body.appendChild(modalBack0);
+
+    modalBack0.addEventListener("click", function (event) {
+      if (event.target === modalBack0) {
+        modalBack0.remove();
+      }
+    });
+  } else {
+    menuContainer.style.right = "-50%";
+  }
+});

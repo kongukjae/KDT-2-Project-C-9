@@ -143,6 +143,28 @@ for (let i = 0; i < menuItems.length; i++) {
 div1button2.addEventListener("click", function () {
   if (menuContainer.style.right === "-50%") {
     menuContainer.style.right = "0";
+    // 메뉴창 제외 다른 것 클릭시 메뉴창이 닫아짐
+    const modalBack0 = document.createElement("div");
+    modalBack0.style.position = "fixed";
+    modalBack0.style.top = "0";
+    modalBack0.style.left = "0";
+    modalBack0.style.width = "100%";
+    modalBack0.style.height = "100%";
+    modalBack0.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    modalBack0.style.display = "flex";
+    modalBack0.style.justifyContent = "center";
+    modalBack0.style.alignItems = "center";
+    modalBack0.style.zIndex = "1";
+
+    modalBack0.appendChild(menuContainer);
+
+    document.body.appendChild(modalBack0);
+
+    modalBack0.addEventListener("click", function (event) {
+      if (event.target === modalBack0) {
+        modalBack0.remove();
+      }
+    });
   } else {
     menuContainer.style.right = "-50%";
   }

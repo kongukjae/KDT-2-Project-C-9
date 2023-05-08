@@ -112,12 +112,29 @@ const div3 = document.getElementById("div3");
 div3.style.height = "8%";
 div3.style.backgroundColor = "#D9D9D9";
 div3.style.borderBottom = "1px solid  black";
+// div3안에 있는 input창을 넣는 곳과 제목 input
+let div3_1 = maker("div", "id", "category", div3);
+let div3_2 = maker("div", "id", "title", div3);
+
+const category = document.getElementById("category");
 
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");
 div4.style.height = "55%";
+div4.style.width = "100%";
 div4.style.backgroundColor = "#D9D9D9";
 div4.style.borderBottom = "1px solid  black";
+
+// fix
+// 내용 input추가
+/* let div4text = maker("input", "id", "text", div4);
+div4text.setAttribute("type", "text"); */
+// let div4text = maker("input", "type", "text", div4);
+let div4text = maker("textarea", "id", "text", div4);
+
+const content = document.getElementById("text");
+div4text.style.width = "1000px";
+div4text.style.height = "80px";
 
 // 카테고리 안내창
 function showModal() {

@@ -120,10 +120,8 @@ const daysInLastMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
 let a = 1;
 let lastMonthDate = daysInLastMonth - firstDayOfMonth + 1;
 
-// fix
-
+//fix
 const apiKey = "키값"; // 키값
-
 const apiUrl = `http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo?serviceKey=${apiKey}&solYear=${currentYear}&solMonth=${currentMonth}&_type=json`;
 
 const xhr = new XMLHttpRequest(); // XMLHttpRequest 객체 생성

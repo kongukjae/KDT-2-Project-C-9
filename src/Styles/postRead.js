@@ -126,6 +126,24 @@ div4.style.width = "100%";
 div4.style.backgroundColor = "#D9D9D9";
 
 // fix 추천 기능 넣기
+//div4에 버튼, p태그 1(누적값), div1(안내문구)
+// 버튼
+let button3 = maker("button", "id", "best", div4);
+const div4button = document.getElementById("best");
+// div4button.style.backgroundImage = "url('/src/img/recommended.png')";
+// div4button.style.backgroundSize = "cover";
+div4button.style.backgroundColor = "transparent"; //버튼 색 투명
+div4button.style.border = "none"; //테두리 X
+div4button.style.height = "100%";
+div4button.style.width = "10%";
+div4button.textContent = "👍🏻";
+div4button.style.fontSize = "30px";
+
+// 누적값
+let sum = maker("span", "id", "counter", div4);
+const div4span = document.getElementById("counter");
+
+// 버튼 클릭하면 증가
 
 // ⭐div5 스타일
 const div5 = document.getElementById("div5");
@@ -135,7 +153,7 @@ div5.style.backgroundColor = "#D9D9D9";
 div5.style.borderTop = "1px solid  black";
 
 // div5에 댓글 추가 버튼
-let button3 = maker("button", "id", "textbtn", div5);
+let button4 = maker("button", "id", "textbtn", div5);
 const div5button = document.getElementById("textbtn");
 div5button.style.width = "20%";
 div5button.style.height = "10%";

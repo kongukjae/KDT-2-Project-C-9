@@ -126,6 +126,10 @@ div3board.style.backgroundColor = "#F9D67A";
 div3board.style.height = "8%";
 div3board.style.width = "100%";
 div3board.style.backgroundColor = "#537DBD";
+div3board.addEventListener("click", function () {
+  // 로고 클릭 시 메인페이지 새로고침
+  window.location.href = "postRead.html";
+});
 // 일단 작성한 게시글들, 원래는 게시글을 써야 보인다.
 let div3_2 = maker("div", "id", "board2", div3);
 const div3board2 = document.getElementById("board2");

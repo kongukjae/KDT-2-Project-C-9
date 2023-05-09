@@ -214,7 +214,13 @@ menuContainer.style.width = "50%";
 menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)"; //투명으로 만듦
 menuContainer.style.transition = "all 0.3s ease-in-out";
 
-const menuItems = ["게시판", "노래소개", "마이페이지", "로그인/회원가입"];
+const menuItems = [
+  "📋게시판",
+  "🎤노래소개",
+  "📘우주 사전",
+  "😎마이페이지",
+  "🔑로그인·회원가입",
+];
 for (let i = 0; i < menuItems.length; i++) {
   const menuItem = document.createElement("a");
   menuItem.textContent = menuItems[i];
@@ -225,6 +231,8 @@ for (let i = 0; i < menuItems.length; i++) {
   } else if (i === 1) {
     menuItem.href = "music.html";
   } else if (i === 2) {
+    menuItem.href = "dictionary.html";
+  } else if (i === 3) {
     menuItem.href = "mypage.html";
   } else {
     menuItem.href = "sign-in.html";
@@ -232,7 +240,7 @@ for (let i = 0; i < menuItems.length; i++) {
 
   menuItem.style.display = "block";
   menuItem.style.padding = "20px";
-  menuItem.style.fontSize = "20px";
+  menuItem.style.fontSize = "18px";
   menuItem.style.color = "#000";
   menuItem.style.textDecoration = "none";
   menuItem.addEventListener("click", function () {
@@ -240,7 +248,6 @@ for (let i = 0; i < menuItems.length; i++) {
   });
   menuContainer.appendChild(menuItem);
 }
-
 div1button2.addEventListener("click", function () {
   if (menuContainer.style.right === "-50%") {
     menuContainer.style.right = "0";

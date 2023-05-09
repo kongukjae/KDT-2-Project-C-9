@@ -122,7 +122,7 @@ category.style.width = "100%";
 category.style.height = "50%";
 
 const radioLabels = ["자랑", "정보", "궁금", "기타"];
-const colors = ["#EB691F", "green", "blue", "#B00DBE"];
+const colors = ["#EEF49F", "green", "blue", "#B00DBE"];
 for (let i = 0; i < radioLabels.length; i++) {
   const radioButton = document.createElement("input");
   radioButton.type = "radio";

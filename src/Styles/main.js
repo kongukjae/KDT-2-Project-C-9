@@ -130,9 +130,9 @@ for (let i = 0; i < menuItems.length; i++) {
   } else if (i === 1) {
     menuItem.href = "music.html";
   } else if (i === 2) {
-    menuItem.href = "mypage.html";
-  } else if (i === 3) {
     menuItem.href = "dictionary.html";
+  } else if (i === 3) {
+    menuItem.href = "mypage.html";
   } else {
     menuItem.href = "sign-in.html";
   }

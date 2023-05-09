@@ -124,8 +124,8 @@ const div4 = document.getElementById("div4");
 div4.style.height = "5%";
 div4.style.width = "100%";
 div4.style.backgroundColor = "#D9D9D9";
+// div4.style.display = "flex";
 
-// fix 추천 기능 넣기
 //div4에 버튼, p태그 1(누적값), div1(안내문구)
 // 버튼
 let button3 = maker("button", "id", "best", div4);
@@ -142,8 +142,36 @@ div4button.style.fontSize = "30px";
 // 누적값
 let sum = maker("span", "id", "counter", div4);
 const div4span = document.getElementById("counter");
+div4span.style.width = "20%";
+div4span.style.height = "100%";
+
+// 추천 안내문구
+let text3 = maker("div", "id", "w", div4);
+const div4text = document.getElementById("w");
+div4text.textContent = "⚠추천은 한 번만 가능합니다.";
+div4text.style.display = "none";
+div4text.style.height = "100%";
 
 // 버튼 클릭하면 증가
+// 누적값을 저장할 변수
+let counter = 0;
+// 이미지를 클릭했는지 체크할 변수
+let clicked = false;
+
+// 이미지를 클릭할 때 호출되는 함수
+function incrementCounter() {
+  if (!clicked) {
+    // 이미 클릭한 경우 중복 클릭 방지
+    counter++; // 누적값 증가
+    document.getElementById("counter").innerText = counter; // 누적값을 화면에 표시
+    clicked = true; // 클릭 상태를 true로 변경
+  } else {
+    div4text.style.display = "block"; // 2번 이상 클릭시 나오는 안내창
+  }
+}
+
+// 이미지 요소에 클릭 이벤트 리스너 등록
+document.getElementById("best").addEventListener("click", incrementCounter);
 
 // ⭐div5 스타일
 const div5 = document.getElementById("div5");

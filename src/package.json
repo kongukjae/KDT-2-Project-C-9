@@ -1,0 +1,19 @@
+{
+  "name": "kdt-2-project-c-9",
+  "version": "1.0.0",
+  "description": "-달의 위상 달력+천문현상",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kongukjae/KDT-2-Project-C-9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kongukjae/KDT-2-Project-C-9/issues"
+  },
+  "homepage": "https://github.com/kongukjae/KDT-2-Project-C-9#readme"
+}

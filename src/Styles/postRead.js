@@ -72,14 +72,18 @@ div2.style.display = "flex";
 div2.style.flexDirection = "row";
 div2.style.alignItems = "center";
 div2.style.justifyContent = "start";
+div2.style.paddingBottom = "5%";
 
-// div2.style.position = "relative";
 //div2안에 있는 텍스트1
 let text1 = maker("div", "id", "text1", div2);
 let text2 = maker("div", "id", "text2", div2);
 
 const div2text1 = document.getElementById("text1");
-div2text1.textContent = "카테고리";
+// div2text1.textContent = "카테고리";
+div2text1.textContent = "자랑"; //임시로 넣은 카테고리명
+div2text1.style.color = "#EEF49F";
+div2text1.style.fontWeight = "bold";
+
 div2text1.style.width = "25%";
 div2text1.style.height = "100%";
 div2text1.style.backgroundColor = "#9BAAC2";
@@ -88,7 +92,8 @@ div2text1.style.justifyContent = "center";
 div2text1.style.display = "flex";
 
 const div2text2 = document.getElementById("text2");
-div2text2.textContent = "제목";
+// div2text2.textContent = "제목";
+div2text2.textContent = "슈퍼문 찍었어요!🌕"; //임시로 넣은 제목
 div2text2.style.width = "75%";
 div2text2.style.height = "100%";
 div2text2.style.alignItems = "center";
@@ -108,7 +113,11 @@ let div3_2 = maker("div", "id", "content", div3);
 const div3img = document.getElementById("img");
 div3img.style.width = "70%";
 div3img.style.height = "50%";
-div3img.style.backgroundColor = "#D9D9D9";
+// div3img.style.backgroundColor = "#D9D9D9";
+div3img.style.backgroundImage = "url('/src/img/moonEx.jpg')"; //임의로 넣은 사진
+div3img.style.backgroundSize = "cover";
+div3img.style.backgroundColor = "transparent"; //버튼 색 투명
+div3img.style.border = "none"; //테두리 X
 
 // 게시글 내용
 const div3text = document.getElementById("content");
@@ -117,7 +126,7 @@ div3text.style.height = "50%";
 div3text.style.overflowY = "scroll"; //게시글 내용이 길어지면 스크롤
 div3text.style.display = "flex"; //왼쪽으로 하기위해 추가
 div3text.style.justifyContent = "start"; //왼쪽~.
-div3text.textContent = "사진 잘 찍었나요?";
+div3text.textContent = "사진 잘 찍었나요?"; //임시로 넣은 글 내용
 
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");

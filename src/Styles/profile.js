@@ -179,6 +179,6 @@ div2input4.style.marginLeft = "14%";
 div2input4.value = "저장";
 
 div2input4.addEventListener("click", function () {
-  // 회원가입 완료-> 메인 페이지로 이동
-  window.location.href = "main.html";
+  // 회원가입 완료-> 마이페이지로 이동
+  window.location.href = "mypage.html";
 });

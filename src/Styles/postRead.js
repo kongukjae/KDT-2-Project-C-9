@@ -13,8 +13,8 @@ function maker(tagName, setName, setValue, parent) {
   element.setAttribute(setName, setValue);
   parent.appendChild(element);
 }
-// div 4개
-for (let i = 1; i < 5; i++) {
+// div 5개
+for (let i = 1; i < 6; i++) {
   maker("div", "id", `div${i}`, root);
 }
 // ⭐div1 스타일
@@ -23,10 +23,8 @@ div1.style.height = "15%";
 div1.style.display = "flex";
 div1.style.flexDirection = "column";
 div1.style.backgroundColor = "#537DBD";
-// div1.style.justifyContent = "space-between"; //버튼을 양 끝으로 이동
 div1.style.alignItems = "center"; //가운데
 div1.style.position = "relative";
-// div1.style.justifyContent = "center";
 
 //div1안에 있는 버튼1(이전), 버튼2(메뉴)
 let button1 = maker("button", "id", "button1", div1);
@@ -46,7 +44,6 @@ div1button.addEventListener("click", function () {
 });
 // 버튼1 이미지
 div1button.style.backgroundImage = "url('/src/img/previous.png')";
-// div1button.style.backgroundSize = "cover";
 div1button.style.backgroundColor = "transparent"; //버튼 색 투명
 div1button.style.border = "none"; //테두리 X
 div1button.style.backgroundSize = "contain"; //이미지가 다 보이게
@@ -72,40 +69,84 @@ div2.style.height = "5%";
 div2.style.width = "100%";
 div2.style.backgroundColor = "#D9D9D9";
 div2.style.display = "flex";
-div2.style.flexDirection = "column";
-div2.style.alignItems = "center"; //가운데
-div2.style.position = "relative";
+div2.style.flexDirection = "row";
+div2.style.alignItems = "center";
+div2.style.justifyContent = "start";
+
+// div2.style.position = "relative";
+//div2안에 있는 텍스트1
+let text1 = maker("div", "id", "text1", div2);
+let text2 = maker("div", "id", "text2", div2);
+
+const div2text1 = document.getElementById("text1");
+div2text1.textContent = "카테고리";
+div2text1.style.width = "25%";
+div2text1.style.height = "100%";
+div2text1.style.backgroundColor = "#9BAAC2";
+div2text1.style.alignItems = "center";
+div2text1.style.justifyContent = "center";
+div2text1.style.display = "flex";
+
+const div2text2 = document.getElementById("text2");
+div2text2.textContent = "제목";
+div2text2.style.width = "75%";
+div2text2.style.height = "100%";
+div2text2.style.alignItems = "center";
+div2text2.style.justifyContent = "center";
+div2text2.style.display = "flex";
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");
-div3.style.height = "50%";
+div3.style.height = "45%";
 div3.style.backgroundColor = "#D9D9D9";
-div3.style.borderBottom = "1px solid  black";
-// div3안에 있는 input창을 넣는 곳과 제목 input
-let div3_1 = maker("div", "id", "category", div3);
-let div3_2 = maker("div", "id", "title", div3);
 
-// 제목
-const title = document.getElementById("title");
-title.style.width = "100%";
-title.style.height = "50%";
-title.style.backgroundColor = "#D9D9D9";
-title.placeholder = "제목을 입력하세요.(글자수 20글자 제한)";
-title.maxLength = 20; //글자수 제한
+// div3안에 있는 이미지와 내용
+let div3_1 = maker("img", "id", "img", div3); //게시글에 이미지가 있는지 확인하는 것 만들기
+let div3_2 = maker("div", "id", "content", div3);
+
+// 이미지
+const div3img = document.getElementById("img");
+div3img.style.width = "70%";
+div3img.style.height = "50%";
+div3img.style.backgroundColor = "#D9D9D9";
+
+// 게시글 내용
+const div3text = document.getElementById("content");
+div3text.style.width = "100%";
+div3text.style.height = "50%";
+div3text.style.overflowY = "scroll"; //게시글 내용이 길어지면 스크롤
+div3text.style.display = "flex"; //왼쪽으로 하기위해 추가
+div3text.style.justifyContent = "start"; //왼쪽~.
+div3text.textContent = "사진 잘 찍었나요?";
+
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");
-div4.style.height = "30%";
+div4.style.height = "5%";
 div4.style.width = "100%";
 div4.style.backgroundColor = "#D9D9D9";
-div4.style.borderBottom = "1px solid  black";
 
-// 내용  입력
-let div4text = maker("div", "id", "text", div4);
-const content = document.getElementById("text");
-content.style.width = "100%";
-content.style.height = "98%";
-content.style.backgroundColor = "#D9D9D9";
-content.placeholder = "내용을 입력하세요.";
+// fix 추천 기능 넣기
+
+// ⭐div5 스타일
+const div5 = document.getElementById("div5");
+div5.style.height = "30%";
+div5.style.width = "100%";
+div5.style.backgroundColor = "#D9D9D9";
+div5.style.borderTop = "1px solid  black";
+
+// div5에 댓글 추가 버튼
+let button3 = maker("button", "id", "textbtn", div5);
+const div5button = document.getElementById("textbtn");
+div5button.style.width = "20%";
+div5button.style.height = "10%";
+div5button.style.display = "flex"; //왼쪽으로 하기위해 추가
+// div5button.style.justifyContent = "start"; //왼쪽~.
+div5button.textContent = "댓글 쓰기";
+div5button.style.fontSize = "15px";
+div5button.style.padding = "2px";
+div5button.style.backgroundColor = "#9BAAC2";
+div5button.style.border = "none";
+div5button.style.borderRadius = "5px";
 
 // 🍔메뉴창
 const menuContainer = document.createElement("div");

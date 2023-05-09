@@ -228,6 +228,8 @@ let input1 = maker("input", "id", "file", div5); //모달창
 // input 스타일설정
 const div5input = document.getElementById("file");
 div5input.setAttribute("type", "file");
+div5input.style.display = "flex"; //왼쪽으로 하기위해 추가
+div5input.style.justifyContent = "start"; //왼쪽~.
 // ⭐div6 스타일
 const div6 = document.getElementById("div6");
 div6.style.height = "10%";

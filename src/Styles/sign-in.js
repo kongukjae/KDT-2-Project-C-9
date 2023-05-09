@@ -115,6 +115,10 @@ div2input3.style.width = "70%";
 div2input3.style.marginTop = "12%";
 div2input3.style.marginLeft = "14%";
 div2input3.value = "로그인";
+div2input3.addEventListener("click", function () {
+  // 회원가입 완료-> 마이페이지로 이동
+  window.location.href = "main.html";
+});
 
 // 회원가입 이동 버튼
 const div2button1 = document.getElementById("loginButton");

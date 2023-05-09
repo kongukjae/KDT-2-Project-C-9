@@ -127,6 +127,10 @@ div2cButton1.style.borderRadius = "30px";
 div2cButton1.textContent = "회원정보";
 div2cButton1.style.fontSize = "20px";
 div2cButton1.style.color = "white";
+div2cButton1.addEventListener("click", function () {
+  // 회원정보 페이지 이동
+  window.location.href = "profile.html";
+});
 
 // div2c 버튼2 스타일
 const div2cButton2 = document.getElementById("writing");

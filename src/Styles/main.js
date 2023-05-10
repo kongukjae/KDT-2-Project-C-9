@@ -218,6 +218,9 @@ div3button.addEventListener("click", function () {
 const div4 = document.getElementById("div4");
 div4.style.height = "47%";
 div4.style.backgroundColor = "white";
+//div4 이미지
+div4.style.backgroundImage = "url('/src/img/ex.png')";
+div4.style.backgroundSize = "cover";
 
 // ⭐div5 스타일
 const div5 = document.getElementById("div5");
@@ -251,150 +254,7 @@ var date =
 function padNumber(num) {
   return num.toString().padStart(2, "0");
 }
-
-//fix
-//월령 api달력
-function padNumber(num) {
-  return num.toString().padStart(2, "0");
-}
-// div4에 날짜를 보여줄 영역을 만듦
-const dateContainer = document.createElement("div");
-dateContainer.style.height = "10%";
-dateContainer.style.width = "100%";
-dateContainer.style.display = "flex";
-dateContainer.style.justifyContent = "center";
-dateContainer.style.alignItems = "center";
-
-const dateText = document.createElement("h2");
-dateText.innerText = `${currentYear}년 ${currentMonth}월`;
-dateText.style.fontSize = "24px";
-dateText.style.margin = "0";
-dateContainer.appendChild(dateText);
-
-const calendarTable = document.createElement("table");
-div4.appendChild(calendarTable);
-calendarTable.style.height = "90%";
-calendarTable.style.width = "100%";
-
-const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-const firstDayOfMonth = new Date(`${currentMonth}/01/${currentYear}`).getDay();
-const daysInLastMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
-let a = 1;
-let lastMonthDate = daysInLastMonth - firstDayOfMonth + 1;
-
-//fix
-function moon(xmlData) {
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlData, "application/xml");
-  const lunAge = xmlDoc.querySelector("lunAge").textContent.trim();
-  return lunAge;
-}
-
-const xhr = new XMLHttpRequest();
-var url =
-  "http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo"; /*URL*/
-var queryParams =
-  "?" + encodeURIComponent("serviceKey") + "=" + "키값"; /*키값넣기*/
-queryParams +=
-  "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear);
-queryParams +=
-  "&" +
-  encodeURIComponent("solMonth") +
-  "=" +
-  encodeURIComponent("0" + currentMonth);
-queryParams +=
-  "&" +
-  encodeURIComponent("solDay") +
-  "=" +
-  encodeURIComponent("0" + currentDay);
-xhr.open("GET", url + queryParams);
-
-xhr.onload = function () {
-  if (xhr.status === 200) {
-    console.log(xhr.response);
-    var xmlData = xhr.responseText;
-    var lunAge = moon(xmlData);
-
-    const images = {
-      a: "/src/img/a.png",
-      b: "/src/img/b.png",
-      c: "/src/img/c.png",
-      d: "/src/img/d.png",
-      e: "/src/img/e.png",
-    };
-
-    const today = new Date().getDate(); // 오늘 날짜 가져오기
-
-    for (let i = 0; i < 5; i++) {
-      const row = document.createElement("tr");
-      calendarTable.appendChild(row);
-
-      for (let j = 0; j < 7; j++) {
-        const cell = document.createElement("td");
-        row.appendChild(cell);
-
-        if (i === 0 && j < firstDayOfMonth) {
-          cell.innerText = lastMonthDate;
-          cell.style.color = "grey";
-          lastMonthDate++;
-        } else if (a > daysInMonth) {
-          cell.innerText = a - daysInMonth;
-          cell.style.color = "grey";
-          a++;
-        } else {
-          cell.innerText = a;
-          a++;
-
-          // 해당하는 날짜에 이미지 보여주기
-          if (
-            parseInt(currentYear) === new Date().getFullYear() &&
-            parseInt(currentMonth) === new Date().getMonth() + 1 &&
-            parseInt(cell.innerText) === today
-          ) {
-            const img = document.createElement("img");
-            // img.src = images.e; // 오늘 날짜에는 항상 이미지 e 보여주기??
-
-            img.src = images.b; //❓
-            img.style.width = "50px";
-            img.style.height = "50px";
-            cell.appendChild(img);
-          } else {
-            let imgSrc = "";
-            if (lunAge >= 1 && lunAge <= 6.9) {
-              imgSrc = images.a;
-            } else if (lunAge > 6.9 && lunAge <= 14.9) {
-              imgSrc = images.b;
-            } else if (lunAge > 14.9 && lunAge <= 21.9) {
-              imgSrc = images.c;
-            } else if (lunAge > 21.9 && lunAge <= 26.9) {
-              imgSrc = images.d;
-            } else {
-              imgSrc = images.e;
-            }
-
-            const img = document.createElement("img");
-            img.src = imgSrc;
-            img.style.width = "50px";
-            img.style.height = "50px";
-            cell.appendChild(img);
-          }
-        }
-      }
-    }
-    // td 스타일
-    const tds = document.querySelectorAll("td");
-    tds.forEach((td) => {
-      td.style.padding = "0";
-      td.style.verticalAlign = "top";
-    });
-  } else {
-    console.error("Error:", xhr.statusText);
-  }
-};
-xhr.onerror = function () {
-  console.error("Error:", xhr.statusText);
-};
-xhr.send();
+//월령 api추가할 것
 
 // 월출, 월몰 api
 // 월출 API
@@ -417,7 +277,10 @@ var xhr1 = new XMLHttpRequest();
 var url1 =
   "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
 var queryParams1 =
-  "?" + encodeURIComponent("serviceKey") + "=" + "키값"; /* 키값넣기 */
+  "?" +
+  encodeURIComponent("serviceKey") +
+  "=" +
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams1 +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent(date); //YYYYMMDD로 보이게 하기
 queryParams1 +=
@@ -448,7 +311,10 @@ var xhr2 = new XMLHttpRequest();
 var url2 =
   "http://apis.data.go.kr/B090041/openapi/service/AstroEventInfoService/getAstroEventInfo";
 var queryParams2 =
-  "?" + encodeURIComponent("serviceKey") + "=" + "키값"; /* 키값넣기 */
+  "?" +
+  encodeURIComponent("serviceKey") +
+  "=" +
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams2 +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear); //해당하는 날짜에 맞게 나오게 함
 queryParams2 +=

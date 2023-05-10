@@ -157,6 +157,53 @@ div2cButton3.textContent = "로그아웃";
 div2cButton3.style.fontSize = "20px";
 div2cButton3.style.color = "white";
 
+// 로그아웃 클릭시 나타나는 모달
+function showModal() {
+  const modalBack = document.createElement("div");
+  modalBack.style.position = "fixed";
+  modalBack.style.top = "0";
+  modalBack.style.left = "0";
+  modalBack.style.width = "100%";
+  modalBack.style.height = "100%";
+  modalBack.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+  modalBack.style.display = "flex";
+  modalBack.style.justifyContent = "center";
+  modalBack.style.alignItems = "center";
+  modalBack.style.zIndex = "1";
+
+  const modalContent = document.createElement("div");
+  modalContent.style.backgroundColor = "#7DA8DC";
+  modalContent.style.padding = "20px";
+  modalContent.style.fontSize = "18px";
+  modalContent.style.textAlign = "center";
+  modalContent.style.width = "70%";
+  modalContent.style.borderRadius = "30px";
+
+  const modalTitle = document.createElement("p");
+  modalTitle.textContent = "로그아웃 하시겠습니까?";
+  modalTitle.style.fontWeight = "bold";
+
+  const p1 = document.createElement("p");
+  p1.textContent = "취소     🤷🏻‍♀️     확인";
+  p1.style.fontSize = "30px";
+  p1.style.color = "#0108C0";
+  p1.style.fontWeight = "bold";
+
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(p1);
+
+  modalBack.appendChild(modalContent);
+
+  document.body.appendChild(modalBack);
+
+  modalBack.addEventListener("click", function (event) {
+    if (event.target === modalBack) {
+      modalBack.remove();
+    }
+  });
+}
+div2cButton3.addEventListener("click", showModal);
+
 // div2c 버튼4 스타일
 const div2cButton4 = document.getElementById("withdrawal");
 div2cButton4.style.height = "40%";
@@ -168,7 +215,52 @@ div2cButton4.style.borderRadius = "30px";
 div2cButton4.textContent = "탈퇴";
 div2cButton4.style.fontSize = "20px";
 div2cButton4.style.color = "white";
+// 탈퇴  클릭시 나타나는 모달
+function showModal2() {
+  const modalBack = document.createElement("div");
+  modalBack.style.position = "fixed";
+  modalBack.style.top = "0";
+  modalBack.style.left = "0";
+  modalBack.style.width = "100%";
+  modalBack.style.height = "100%";
+  modalBack.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+  modalBack.style.display = "flex";
+  modalBack.style.justifyContent = "center";
+  modalBack.style.alignItems = "center";
+  modalBack.style.zIndex = "1";
 
+  const modalContent = document.createElement("div");
+  modalContent.style.backgroundColor = "#7DA8DC";
+  modalContent.style.padding = "20px";
+  modalContent.style.fontSize = "18px";
+  modalContent.style.textAlign = "center";
+  modalContent.style.width = "70%";
+  modalContent.style.borderRadius = "30px";
+
+  const modalTitle = document.createElement("p");
+  modalTitle.textContent = "탈퇴 하시겠습니까?";
+  modalTitle.style.fontWeight = "bold";
+
+  const p1 = document.createElement("p");
+  p1.textContent = "취소     🤷🏻‍♂️     확인";
+  p1.style.fontSize = "30px";
+  p1.style.color = "#0108C0";
+  p1.style.fontWeight = "bold";
+
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(p1);
+
+  modalBack.appendChild(modalContent);
+
+  document.body.appendChild(modalBack);
+
+  modalBack.addEventListener("click", function (event) {
+    if (event.target === modalBack) {
+      modalBack.remove();
+    }
+  });
+}
+div2cButton4.addEventListener("click", showModal2);
 // 🍔메뉴창
 const menuContainer = document.createElement("div");
 root.appendChild(menuContainer);

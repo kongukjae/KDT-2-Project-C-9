@@ -98,6 +98,76 @@ div2button.style.border = "none"; //테두리 X
 div2button.style.backgroundSize = "contain"; //이미지가 다 보이게
 div2button.style.backgroundRepeat = "no-repeat"; //이미지 반복X
 
+// fix(p를 버튼으로 바꿔야하고 버튼 클릭하면 알맞는 게시글만 보여야한다.)
+// 카테고리 모달창
+function showModal() {
+  const modalBack = document.createElement("div");
+  modalBack.style.position = "fixed";
+  modalBack.style.top = "0";
+  modalBack.style.left = "0";
+  modalBack.style.width = "100%";
+  modalBack.style.height = "100%";
+  modalBack.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+  modalBack.style.display = "flex";
+  modalBack.style.justifyContent = "center";
+  modalBack.style.alignItems = "center";
+  modalBack.style.zIndex = "1";
+
+  const modalContent = document.createElement("div");
+  modalContent.style.backgroundColor = "#6376A6";
+  modalContent.style.padding = "20px";
+  modalContent.style.fontSize = "18px";
+  modalContent.style.width = "70%";
+
+  modalContent.style.textAlign = "center";
+
+  const modalTitle = document.createElement("p");
+  modalTitle.textContent = "카테고리";
+  modalTitle.style.fontWeight = "bold";
+
+  const p1 = document.createElement("p");
+  p1.textContent = "자랑";
+  p1.style.fontSize = "25px";
+  p1.style.color = "#EEF49F";
+  p1.style.fontWeight = "bold";
+
+  const p2 = document.createElement("p");
+  p2.textContent = "정보";
+  p2.style.fontSize = "25px";
+  p2.style.color = "green";
+  p2.style.fontWeight = "bold";
+
+  const p3 = document.createElement("p");
+  p3.textContent = "궁금";
+  p3.style.fontSize = "25px";
+  p3.style.color = "blue";
+  p3.style.fontWeight = "bold";
+
+  const p4 = document.createElement("p");
+  p4.textContent = "기타";
+  p4.style.fontSize = "25px";
+  p4.style.color = "#B00DBE";
+  p4.style.fontWeight = "bold";
+
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(p1);
+  modalContent.appendChild(p2);
+  modalContent.appendChild(p3);
+  modalContent.appendChild(p4);
+
+  modalBack.appendChild(modalContent);
+
+  document.body.appendChild(modalBack);
+
+  modalBack.addEventListener("click", function (event) {
+    if (event.target === modalBack) {
+      modalBack.remove();
+    }
+  });
+}
+
+div2button.addEventListener("click", showModal);
+
 // 버튼4 스타일
 const div2button2 = document.getElementById("button4");
 div2button2.style.height = "55%";
@@ -127,18 +197,30 @@ div3board.style.height = "8%";
 div3board.style.width = "100%";
 div3board.style.backgroundColor = "#537DBD";
 div3board.addEventListener("click", function () {
-  // 로고 클릭 시 메인페이지 새로고침
+  // 버튼 클릭 시 게시글 이동
   window.location.href = "postRead.html";
 });
+//예시
+div3board.style.backgroundImage = "url('/src/img/po.png')";
+div3board.style.backgroundSize = "cover";
+div3board.style.backgroundColor = "transparent"; //버튼 색 투명
+div3board.style.border = "none"; //테두리 X
+
 // 일단 작성한 게시글들, 원래는 게시글을 써야 보인다.
 let div3_2 = maker("div", "id", "board2", div3);
 const div3board2 = document.getElementById("board2");
 div3board2.style.backgroundColor = "#F9D67A";
-div3board2.style.height = "8%";
+div3board2.style.height = "90%";
 div3board2.style.width = "100%";
 div3board2.style.backgroundColor = "#537DBD";
 div3board2.style.marginTop = "5%"; //게시글은 서로 띄어져있다.
-let div3_3 = maker("div", "id", "board3", div3);
+//예시
+div3board2.style.backgroundImage = "url('/src/img/po2.png')";
+div3board2.style.backgroundSize = "cover";
+div3board2.style.backgroundColor = "transparent"; //버튼 색 투명
+div3board2.style.border = "none"; //테두리 X
+
+/* let div3_3 = maker("div", "id", "board3", div3);
 const div3board3 = document.getElementById("board3");
 div3board3.style.backgroundColor = "#F9D67A";
 div3board3.style.height = "8%";
@@ -186,7 +268,7 @@ div3board9.style.backgroundColor = "#F9D67A";
 div3board9.style.height = "8%";
 div3board9.style.width = "100%";
 div3board9.style.backgroundColor = "#537DBD";
-div3board9.style.marginTop = "5%"; //게시글은 서로 띄어져있다.
+div3board9.style.marginTop = "5%"; //게시글은 서로 띄어져있다. */
 // ⭐div4 스타일
 const div4 = document.getElementById("div4");
 div4.style.height = "10%";

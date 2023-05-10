@@ -120,6 +120,11 @@ let div3div1 = maker("div", "id", "div3_1", div3);
 let div3div2 = maker("div", "id", "div3_2", div3);
 const div3_1 = document.getElementById("div3_1");
 const div3_2 = document.getElementById("div3_2");
+//추가함
+let div3div3 = maker("div", "id", "div3_3", div3);
+let div3div4 = maker("div", "id", "div3_4", div3);
+const div3_3 = document.getElementById("div3_3");
+const div3_4 = document.getElementById("div3_4");
 
 // div3_1 스타일
 div3_1.style.height = "20%";
@@ -129,11 +134,25 @@ div3_1.style.display = "flex";
 div3_1.style.flexDirection = "row";
 
 // div3_2 스타일
-div3_2.style.height = "30%";
+div3_2.style.height = "10%";
 div3_2.style.width = "100%";
 div3_2.style.marginTop = "5%";
 div3_2.style.display = "flex";
 div3_2.style.flexDirection = "row";
+
+// div3_3 스타일
+div3_3.style.height = "20%";
+div3_3.style.width = "100%";
+div3_3.style.marginTop = "12%";
+div3_3.style.display = "flex";
+div3_3.style.flexDirection = "row";
+
+// div3_4 스타일
+div3_4.style.height = "10%";
+div3_4.style.width = "100%";
+div3_4.style.marginTop = "5%";
+div3_4.style.display = "flex";
+div3_4.style.flexDirection = "row";
 
 // div3안에 있는 노래소개 4개만
 let div3c_1 = maker("div", "id", "m1", div3_1);
@@ -163,7 +182,7 @@ div3music2.style.backgroundSize = "contain";
 div3music2.style.backgroundRepeat = "no-repeat";
 
 const div3music1Content = document.getElementById("m1Content");
-div3music1Content.style.height = "20%";
+div3music1Content.style.height = "70%";
 div3music1Content.style.width = "40%";
 div3music1Content.style.border = "none";
 div3music1Content.style.marginLeft = "8%";
@@ -179,7 +198,7 @@ div3music1Content.style.justifyContent = "center";
 div3music1Content.style.fontWeight = "bold";
 
 const div3music2Content = document.getElementById("m2Content");
-div3music2Content.style.height = "20%";
+div3music2Content.style.height = "70%";
 div3music2Content.style.width = "40%";
 div3music2Content.style.border = "none";
 div3music2Content.style.marginLeft = "8%";
@@ -193,6 +212,122 @@ div3music2Content.style.display = "flex";
 div3music2Content.style.alignItems = "center";
 div3music2Content.style.justifyContent = "center";
 div3music2Content.style.fontWeight = "bold";
+
+//노래추가하면 나오는 것. 임의로 작성
+let div3c_5 = maker("div", "id", "m3", div3_3);
+let div3c_6 = maker("div", "id", "m3Content", div3_4);
+
+const div3music3 = document.getElementById("m3");
+div3music3.style.height = "100%";
+div3music3.style.width = "40%";
+div3music3.style.border = "none";
+div3music3.style.marginLeft = "8%";
+div3music3.style.textAlign = "center";
+div3music3.style.backgroundImage = "url('/src/img/record.png')";
+div3music3.style.backgroundSize = "contain";
+div3music3.style.backgroundRepeat = "no-repeat";
+div3music3.style.display = "none";
+
+const div3music3Content = document.getElementById("m3Content");
+div3music3Content.style.height = "70%";
+div3music3Content.style.width = "40%";
+div3music3Content.style.border = "none";
+div3music3Content.style.marginLeft = "8%";
+div3music3Content.style.textAlign = "center";
+div3music3Content.style.backgroundColor = "#537DBD";
+div3music3Content.style.borderRadius = "30px";
+div3music3Content.textContent = "도영-like a star";
+div3music3Content.style.fontSize = "20px";
+div3music3Content.style.color = "white";
+div3music3Content.style.display = "flex";
+div3music3Content.style.alignItems = "center";
+div3music3Content.style.justifyContent = "center";
+div3music3Content.style.fontWeight = "bold";
+div3music3Content.style.paddingTop = "2%";
+div3music3Content.style.display = "none";
+
+// 카테고리 모달창
+function showModal() {
+  const modalBack = document.createElement("div");
+  modalBack.style.position = "fixed";
+  modalBack.style.top = "0";
+  modalBack.style.left = "0";
+  modalBack.style.width = "100%";
+  modalBack.style.height = "100%";
+  modalBack.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+  modalBack.style.display = "flex";
+  modalBack.style.justifyContent = "center";
+  modalBack.style.alignItems = "center";
+  modalBack.style.zIndex = "1";
+
+  const modalContent = document.createElement("div");
+  modalContent.style.backgroundColor = "#6376A6";
+  modalContent.style.padding = "20px";
+  modalContent.style.fontSize = "18px";
+  modalContent.style.width = "70%";
+
+  modalContent.style.textAlign = "center";
+
+  const modalTitle = document.createElement("p");
+  modalTitle.textContent = "노래 추천";
+  modalTitle.style.fontWeight = "bold";
+
+  const p1 = document.createElement("p");
+  p1.textContent = "가수";
+  p1.style.fontSize = "15px";
+  p1.style.color = "#EEF49F";
+  p1.style.fontWeight = "bold";
+
+  const p2 = document.createElement("input");
+  p2.style.fontSize = "15px";
+  p2.style.color = "#EEF49F";
+  p2.style.fontWeight = "bold";
+
+  const p3 = document.createElement("p");
+  p3.textContent = "궁금";
+  p3.style.fontSize = "15px";
+  p3.style.color = "blue";
+  p3.style.fontWeight = "bold";
+
+  const p4 = document.createElement("input");
+  p4.textContent = "궁금";
+  p4.style.fontSize = "15px";
+  p4.style.color = "blue";
+  p4.style.fontWeight = "bold";
+
+  const p5 = document.createElement("p");
+  p5.textContent = "등록";
+  p5.style.fontSize = "15px";
+  p5.style.color = "black";
+  p5.style.fontWeight = "bold";
+
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(p1);
+  modalContent.appendChild(p2);
+  modalContent.appendChild(p3);
+  modalContent.appendChild(p4);
+  modalContent.appendChild(p5);
+
+  modalBack.appendChild(modalContent);
+
+  document.body.appendChild(modalBack);
+
+  modalBack.addEventListener("click", function (event) {
+    if (event.target === modalBack) {
+      modalBack.remove();
+    }
+  });
+  p5.addEventListener("click", function (event) {
+    if (event.target === p5) {
+      modalContent.remove();
+      modalBack.remove();
+      div3music3.style.display = "block";
+      div3music3Content.style.display = "block";
+    }
+  });
+}
+
+div3music1Content.addEventListener("click", showModal);
 
 // 🍔메뉴창
 const menuContainer = document.createElement("div");

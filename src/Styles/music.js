@@ -115,6 +115,84 @@ div3.style.height = "85%";
 div3.style.backgroundColor = "#325489";
 
 // div3에 div를 또 나누기
+// div3안에 2개의 div (6개로 나누고 -> 나중에 3개로 나눈다.(이미지와 버튼은 한개이므로))
+let div3div1 = maker("div", "id", "div3_1", div3);
+let div3div2 = maker("div", "id", "div3_2", div3);
+const div3_1 = document.getElementById("div3_1");
+const div3_2 = document.getElementById("div3_2");
+
+// div3_1 스타일
+div3_1.style.height = "20%";
+div3_1.style.width = "100%";
+div3_1.style.marginTop = "12%";
+div3_1.style.display = "flex";
+div3_1.style.flexDirection = "row";
+
+// div3_2 스타일
+div3_2.style.height = "30%";
+div3_2.style.width = "100%";
+div3_2.style.marginTop = "5%";
+div3_2.style.display = "flex";
+div3_2.style.flexDirection = "row";
+
+// div3안에 있는 노래소개 4개만
+let div3c_1 = maker("div", "id", "m1", div3_1);
+let div3c_2 = maker("div", "id", "m2", div3_1);
+let div3c_3 = maker("div", "id", "m1Content", div3_2);
+let div3c_4 = maker("div", "id", "m2Content", div3_2);
+
+// div3c 스타일
+const div3music1 = document.getElementById("m1");
+div3music1.style.height = "100%";
+div3music1.style.width = "40%";
+div3music1.style.border = "none";
+div3music1.style.marginLeft = "8%";
+div3music1.style.textAlign = "center";
+div3music1.style.backgroundImage = "url('/src/img/dj.png')";
+div3music1.style.backgroundSize = "contain";
+div3music1.style.backgroundRepeat = "no-repeat";
+
+const div3music2 = document.getElementById("m2");
+div3music2.style.height = "100%";
+div3music2.style.width = "40%";
+div3music2.style.border = "none";
+div3music2.style.marginLeft = "8%";
+div3music2.style.textAlign = "center";
+div3music2.style.backgroundImage = "url('/src/img/record.png')";
+div3music2.style.backgroundSize = "contain";
+div3music2.style.backgroundRepeat = "no-repeat";
+
+const div3music1Content = document.getElementById("m1Content");
+div3music1Content.style.height = "20%";
+div3music1Content.style.width = "40%";
+div3music1Content.style.border = "none";
+div3music1Content.style.marginLeft = "8%";
+div3music1Content.style.textAlign = "center";
+div3music1Content.style.backgroundColor = "#9BB5DC";
+div3music1Content.style.borderRadius = "30px";
+div3music1Content.textContent = "노래 추가";
+div3music1Content.style.fontSize = "20px";
+div3music1Content.style.color = "white";
+div3music1Content.style.display = "flex";
+div3music1Content.style.alignItems = "center";
+div3music1Content.style.justifyContent = "center";
+div3music1Content.style.fontWeight = "bold";
+
+const div3music2Content = document.getElementById("m2Content");
+div3music2Content.style.height = "20%";
+div3music2Content.style.width = "40%";
+div3music2Content.style.border = "none";
+div3music2Content.style.marginLeft = "8%";
+div3music2Content.style.textAlign = "center";
+div3music2Content.style.backgroundColor = "#537DBD";
+div3music2Content.style.borderRadius = "30px";
+div3music2Content.textContent = "유미-별";
+div3music2Content.style.fontSize = "20px";
+div3music2Content.style.color = "white";
+div3music2Content.style.display = "flex";
+div3music2Content.style.alignItems = "center";
+div3music2Content.style.justifyContent = "center";
+div3music2Content.style.fontWeight = "bold";
 
 // 🍔메뉴창
 const menuContainer = document.createElement("div");

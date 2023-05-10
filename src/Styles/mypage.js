@@ -201,6 +201,12 @@ function showModal() {
       modalBack.remove();
     }
   });
+  p1.addEventListener("click", function (event) {
+    if (event.target === p1) {
+      modalContent.remove();
+      modalBack.remove();
+    }
+  });
 }
 div2cButton3.addEventListener("click", showModal);
 
@@ -256,6 +262,12 @@ function showModal2() {
 
   modalBack.addEventListener("click", function (event) {
     if (event.target === modalBack) {
+      modalBack.remove();
+    }
+  });
+  p1.addEventListener("click", function (event) {
+    if (event.target === p1) {
+      modalContent.remove();
       modalBack.remove();
     }
   });

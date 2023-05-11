@@ -274,25 +274,24 @@ function showModal() {
 
   const p1 = document.createElement("p");
   p1.textContent = "가수";
-  p1.style.fontSize = "15px";
-  p1.style.color = "#EEF49F";
+  p1.style.fontSize = "20px";
+  p1.style.color = "white";
   p1.style.fontWeight = "bold";
 
   const p2 = document.createElement("input");
   p2.style.fontSize = "15px";
-  p2.style.color = "#EEF49F";
+  p2.style.color = "black";
   p2.style.fontWeight = "bold";
 
   const p3 = document.createElement("p");
-  p3.textContent = "궁금";
-  p3.style.fontSize = "15px";
-  p3.style.color = "blue";
+  p3.textContent = "제목";
+  p3.style.fontSize = "20px";
+  p3.style.color = "white";
   p3.style.fontWeight = "bold";
 
   const p4 = document.createElement("input");
-  p4.textContent = "궁금";
   p4.style.fontSize = "15px";
-  p4.style.color = "blue";
+  p4.style.color = "black";
   p4.style.fontWeight = "bold";
 
   const p5 = document.createElement("p");

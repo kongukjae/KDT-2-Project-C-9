@@ -241,7 +241,7 @@ div5button.style.border = "none"; //테두리 X
 var currentDate = new Date(); // 현재 날짜 객체 가져오기
 var currentMonth = currentDate.getMonth() + 1; // 해당하는 달 가져오기 (0부터 시작하므로 1을 더해줌)
 var currentYear = currentDate.getFullYear();
-var currentDay = currentDate.getDay();
+var currentDay = currentDate.getDate();
 var date =
   currentYear.toString() +
   padNumber(currentMonth) +
@@ -298,7 +298,7 @@ var queryParams =
   "?" +
   encodeURIComponent("serviceKey") +
   "=" +
-  "키값"; /*Service Key*/
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D"; /*Service Key*/
 queryParams +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear);
 queryParams +=
@@ -310,7 +310,7 @@ queryParams +=
   "&" +
   encodeURIComponent("solDay") +
   "=" +
-  encodeURIComponent("0" + currentDay);
+  encodeURIComponent(currentDay); //fix 날짜 오류. 수정
 xhr.open("GET", url + queryParams);
 
 xhr.onload = function () {
@@ -358,20 +358,22 @@ xhr.onload = function () {
             const img = document.createElement("img");
             // img.src = images.e; // 오늘 날짜에는 항상 이미지 e 보여주기??
 
-            img.src = images.b; //❓
+            img.src = images.e; //❓
             img.style.width = "50px";
             img.style.height = "50px";
             cell.appendChild(img);
           } else {
             let imgSrc = "";
             if (lunAge >= 1 && lunAge <= 6.9) {
-              imgSrc = images.a;
-            } else if (lunAge > 6.9 && lunAge <= 14.9) {
-              imgSrc = images.b;
-            } else if (lunAge > 14.9 && lunAge <= 21.9) {
-              imgSrc = images.c;
-            } else if (lunAge > 21.9 && lunAge <= 26.9) {
+              imgSrc = images.f;
+            } else if (lunAge > 6.9 && lunAge <= 12.9) {
               imgSrc = images.d;
+            } else if (lunAge > 12.9 && lunAge <= 15.9) {
+              imgSrc = images.c;
+            } else if (lunAge > 15.9 && lunAge <= 22.9) {
+              imgSrc = images.b;
+            }else if(lunAge > 22.9 && lunAge <= 29.9) {
+              imgSrc = images.a;
             } else {
               imgSrc = images.e;
             }
@@ -424,7 +426,7 @@ var queryParams1 =
   "?" +
   encodeURIComponent("serviceKey") +
   "=" +
-  "키값";
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams1 +=
   "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent(date); //YYYYMMDD로 보이게 하기
 queryParams1 +=
@@ -458,7 +460,7 @@ var queryParams2 =
   "?" +
   encodeURIComponent("serviceKey") +
   "=" +
-  "키값";
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
 queryParams2 +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear); //해당하는 날짜에 맞게 나오게 함
 queryParams2 +=

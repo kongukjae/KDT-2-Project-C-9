@@ -264,13 +264,13 @@ dateContainer.style.width = "100%";
 dateContainer.style.display = "flex";
 dateContainer.style.justifyContent = "center";
 dateContainer.style.alignItems = "center";
-/* 
+
 // 날짜를 보여줄 텍스트 엘리먼트를 만들어서 dateContainer에 추가함
 const dateText = document.createElement("h2");
 dateText.innerText = `${currentYear}년 ${currentMonth}월`;
 dateText.style.fontSize = "24px";
 dateText.style.margin = "0";
-dateContainer.appendChild(dateText); */
+dateContainer.appendChild(dateText);
 
 const calendarTable = document.createElement("table");
 div4.appendChild(calendarTable);
@@ -318,6 +318,7 @@ xhr.onload = function () {
   if (xhr.status === 200) {
     console.log(xhr.response);
     var xmlData = xhr.responseText;
+    var lunAge = moon(xmlData);
 
     const images = {
       a: "/src/img/a.png",
@@ -349,41 +350,74 @@ xhr.onload = function () {
           cell.innerText = a;
           a++;
 
-          const currentDate = new Date(currentYear, currentMonth - 1, parseInt(cell.innerText));
-          const lunAge = moon(getFormattedDate(currentDate));
+          // 해당하는 날짜에 이미지 보여주기
+          if (
+            parseInt(currentYear) === new Date().getFullYear() &&
+            parseInt(currentMonth) === new Date().getMonth() + 1 &&
+            parseInt(cell.innerText) === today
+          ) {
+            const img = document.createElement("img");
+            // img.src = images.e; // 오늘 날짜에는 항상 이미지 e 보여주기??
 
-          let imgSrc = "";
-          if (lunAge >= 1 && lunAge <= 6.9) {
-            imgSrc = images.f;
-          } else if (lunAge > 6.9 && lunAge <= 12.9) {
-            imgSrc = images.d;
-          } else if (lunAge > 12.9 && lunAge <= 15.9) {
-            imgSrc = images.c;
-          } else if (lunAge > 15.9 && lunAge <= 22.9) {
-            imgSrc = images.b;
-          } else if (lunAge > 22.9 && lunAge <= 29.9) {
-            imgSrc = images.a;
+            let imgSrc = "";
+            if (lunAge >= 1 && lunAge <= 6.9) {
+              imgSrc = images.f;
+            } else if (lunAge > 6.9 && lunAge <= 12.9) {
+              imgSrc = images.d;
+            } else if (lunAge > 12.9 && lunAge <= 15.9) {
+              imgSrc = images.c;
+            } else if (lunAge > 15.9 && lunAge <= 22.9) {
+              imgSrc = images.b;
+            } else if (lunAge > 22.9 && lunAge <= 29.9) {
+              imgSrc = images.a;
+            } else {
+              imgSrc = images.e;
+            }
+            
+            img.src = imgSrc;
+            img.style.width = "50px";
+            img.style.height = "50px";
+            cell.appendChild(img);
+            
           } else {
-            imgSrc = images.e;
-          }
+            let imgSrc = "";
+            if (lunAge >= 1 && lunAge <= 6.9) {
+              imgSrc = images.f;
+            } else if (lunAge > 6.9 && lunAge <= 12.9) {
+              imgSrc = images.d; 
+            } else if (lunAge > 12.9 && lunAge <= 15.9) {
+              imgSrc = images.c;
+            } else if (lunAge > 15.9 && lunAge <= 22.9) {
+              imgSrc = images.b;
+            }else if(lunAge > 22.9 && lunAge <= 29.9) {
+              imgSrc = images.a;
+            } else {
+              imgSrc = images.e;
+            }
 
-          const img = document.createElement("img");
-          img.src = imgSrc;
-          img.style.width = "50px";
-          img.style.height = "50px";
-          cell.appendChild(img);
+            const img = document.createElement("img");
+            img.src = imgSrc;
+            img.style.width = "50px";
+            img.style.height = "50px";
+            cell.appendChild(img);
+          }
         }
       }
     }
+    // td 스타일
+    const tds = document.querySelectorAll("td");
+    tds.forEach((td) => {
+      td.style.padding = "0";
+      td.style.verticalAlign = "top";
+    });
+  } else {
+    console.error("Error:", xhr.statusText);
   }
-  // td 스타일
-  const tds = document.querySelectorAll("td");
-  tds.forEach((td) => {
-    td.style.padding = "0";
-    td.style.verticalAlign = "top";
-  });
 };
-
+xhr.onerror = function () {
+  console.error("Error:", xhr.statusText);
+};
+xhr.send();
 
 // 월출, 월몰 api
 // 월출 API

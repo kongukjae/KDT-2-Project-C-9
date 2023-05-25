@@ -288,3 +288,210 @@ div1button2.addEventListener("click", function () {
     menuContainer.style.right = "-50%";
   }
 });
+
+//설명창
+
+
+let div2c_a = makerChild("div", "id", "ca", div2);
+
+const dropdownContent1 = document.getElementById("ca");
+dropdownContent1.style.height = "10%";
+dropdownContent1.style.width = "80%";
+1
+dropdownContent1.style.backgroundColor = "#849ABA";
+dropdownContent1.style.border = "none";
+dropdownContent1.style.marginLeft = "10%"; 
+dropdownContent1.style.alignItems = "center";
+dropdownContent1.style.borderRadius = "10px";
+dropdownContent1.textContent = "월출: 달이 지평선 위로 떠오르는 것을 의미, 월몰: 달이 지평선으로 사라지는 것";
+dropdownContent1.style.fontSize = "15px";
+dropdownContent1.style.color = "black";
+dropdownContent1.style.justifyContent = "center";
+dropdownContent1.style.display = "none";
+dropdownContent1.style.marginTop = "10%";
+
+
+div2text1.addEventListener("click", function() {
+  if (dropdownContent1.style.display === "none") {
+    dropdownContent1.style.display = "block";
+  } else {
+    dropdownContent1.style.display = "none";
+  }
+});
+
+div2.insertBefore(dropdownContent1, div2text2);
+
+
+let div2c_b = makerChild("div", "id", "cb", div2);
+
+const dropdownContent2 = document.getElementById("cb");
+dropdownContent2.style.height = "15%";
+dropdownContent2.style.width = "80%";
+dropdownContent2.style.paddingTop = "5%";
+
+dropdownContent2.style.backgroundColor = "#849ABA";
+dropdownContent2.style.border = "none";
+dropdownContent2.style.marginLeft = "10%"; 
+dropdownContent2.style.alignItems = "center";
+dropdownContent2.style.borderRadius = "10px";
+dropdownContent2.textContent = "달의 반지름은 지구 반지름의 약 4분의 1이며, 질량은 지구 질량의 1/81.3이고, 달과 지구의 공통 중심은 지구 내부에 있다. 달 궤도의 반지름은 38만 4,400km이다.";
+dropdownContent2.style.fontSize = "15px";
+dropdownContent2.style.color = "black";
+dropdownContent2.style.justifyContent = "center";
+dropdownContent2.style.display = "none";
+dropdownContent2.style.marginTop = "10%";
+
+div2text2.addEventListener("click", function() {
+  if (dropdownContent2.style.display === "none") {
+    dropdownContent2.style.display = "block";
+  } else {
+    dropdownContent2.style.display = "none";
+  }
+});
+
+div2.insertBefore(dropdownContent2, div2text3);
+
+
+let div2c_c = makerChild("div", "id", "cc", div2);
+
+const dropdownContent3 = document.getElementById("cc");
+dropdownContent3.style.height = "20%";
+dropdownContent3.style.width = "80%";
+dropdownContent3.style.paddingTop = "5%";
+dropdownContent3.style.backgroundColor = "#849ABA";
+dropdownContent3.style.border = "none";
+dropdownContent3.style.marginLeft = "10%"; 
+dropdownContent3.style.alignItems = "center";
+dropdownContent3.style.borderRadius = "10px";
+dropdownContent3.textContent = "니콜라우스 코페르니쿠스:니콜라우스 코페르니쿠스는 당시 진리처럼 믿어온 지구중심설의 오류를 지적하고 태양중심설을 주장하여 근대 자연과학의 획기적인 전환, 이른바 '코페르니쿠스의 전환'을 가져온 폴란드의 천문학자이다.";
+dropdownContent3.style.fontSize = "15px";
+dropdownContent3.style.color = "black";
+dropdownContent3.style.justifyContent = "center";
+dropdownContent3.style.display = "none";
+dropdownContent3.style.marginTop = "10%";
+
+div2text3.addEventListener("click", function() {
+  if (dropdownContent3.style.display === "none") {
+    dropdownContent3.style.display = "block";
+  } else {
+    dropdownContent3.style.display = "none";
+  }
+});
+
+div2.insertBefore(dropdownContent3, div2text4);
+
+
+let div2c_d = makerChild("div", "id", "cd", div2);
+
+const dropdownContent4 = document.getElementById("cd");
+dropdownContent4.style.height = "15%";
+dropdownContent4.style.width = "80%";
+dropdownContent4.style.paddingTop = "5%";4
+dropdownContent4.style.backgroundColor = "#849ABA";
+dropdownContent4.style.border = "none";
+dropdownContent4.style.marginLeft = "10%"; 
+dropdownContent4.style.alignItems = "center";
+dropdownContent4.style.borderRadius = "10px";
+dropdownContent4.textContent = "적성왜성은 작고 상대적으로 차가우며 태양의 0.081-0.5배 정도의 질량을 지닌 주계열성을 부르는 말이다.";
+dropdownContent4.style.fontSize = "15px";
+dropdownContent4.style.color = "black";
+dropdownContent4.style.justifyContent = "center";
+dropdownContent4.style.display = "none";
+dropdownContent4.style.marginTop = "10%";
+
+div2text4.addEventListener("click", function() {
+  if (dropdownContent4.style.display === "none") {
+    dropdownContent4.style.display = "block";
+  } else {
+    dropdownContent4.style.display = "none";
+  }
+});
+
+div2.insertBefore(dropdownContent4, div2text5);
+
+
+let div2c_e = makerChild("div", "id", "ce", div2);
+
+const dropdownContent5 = document.getElementById("ce");
+dropdownContent5.style.height = "15%";
+dropdownContent5.style.width = "80%";
+dropdownContent5.style.paddingTop = "5%";
+dropdownContent5.style.backgroundColor = "#849ABA";
+dropdownContent5.style.border = "none";
+dropdownContent5.style.marginLeft = "10%"; 
+dropdownContent5.style.alignItems = "center";
+dropdownContent5.style.borderRadius = "10px";
+dropdownContent5.textContent = "블랙홀이란 핵융합 연료를 소진한 거대한 별이 마지막에 중력붕괴하면서 만들어지는 초고밀도 천체이다.";
+dropdownContent5.style.fontSize = "15px";
+dropdownContent5.style.color = "black";
+dropdownContent5.style.justifyContent = "center";
+dropdownContent5.style.display = "none";
+dropdownContent5.style.marginTop = "10%";
+
+div2text5.addEventListener("click", function() {
+  if (dropdownContent5.style.display === "none") {
+    dropdownContent5.style.display = "block";
+  } else {
+    dropdownContent5.style.display = "none";
+  }
+});
+
+div2.insertBefore(dropdownContent5, div2text6);
+
+
+let div2c_f = makerChild("div", "id", "cf", div2);
+
+const dropdownContent6 = document.getElementById("cf");
+dropdownContent6.style.height = "20%";
+dropdownContent6.style.width = "80%";
+dropdownContent6.style.paddingTop = "5%";
+dropdownContent6.style.backgroundColor = "#849ABA";
+dropdownContent6.style.border = "none";
+dropdownContent6.style.marginLeft = "10%"; 
+dropdownContent6.style.alignItems = "center";
+dropdownContent6.style.borderRadius = "10px";
+dropdownContent6.textContent = "우리가 살고 있는 지구와 같이 태양을 중심으로 돌고 있는 행성들이 모여 있는 곳을 태양계라고 하는데, 태양에서 가까운 순서대로 수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성이 나열되어 총 8개의 행성이 존재한다.";
+dropdownContent6.style.fontSize = "15px";
+dropdownContent6.style.color = "black";
+dropdownContent6.style.justifyContent = "center";
+dropdownContent6.style.display = "none";
+dropdownContent6.style.marginTop = "10%";
+
+div2text6.addEventListener("click", function() {
+  if (dropdownContent6.style.display === "none") {
+    dropdownContent6.style.display = "block";
+  } else {
+    dropdownContent6.style.display = "none";
+  }
+});
+
+div2.insertBefore(dropdownContent6, div2text7);
+
+
+let div2c_g = makerChild("div", "id", "cg", div2);
+
+const dropdownContent7 = document.getElementById("cg");
+dropdownContent7.style.height = "20%";
+dropdownContent7.style.width = "80%";
+dropdownContent7.style.paddingTop = "5%";
+dropdownContent7.style.backgroundColor = "#849ABA";
+dropdownContent7.style.border = "none";
+dropdownContent7.style.marginLeft = "10%"; 
+dropdownContent7.style.alignItems = "center";
+dropdownContent7.style.borderRadius = "10px";
+dropdownContent7.textContent = "천문 분광학은 별 및 기타 천체에서 방출되는 가시광선, 자외선, X선, 적외선 및 전파를 포함한 전자기 복사의 스펙트럼을 측정하기 위해 분광학 기술을 사용하여 천문학을 연구하는 학문이다.";
+dropdownContent7.style.fontSize = "15px";
+dropdownContent7.style.color = "black";
+dropdownContent7.style.justifyContent = "center";
+dropdownContent7.style.display = "none";
+dropdownContent7.style.marginTop = "10%";
+
+div2text7.addEventListener("click", function() {
+  if (dropdownContent7.style.display === "none") {
+    dropdownContent7.style.display = "block";
+  } else {
+    dropdownContent7.style.display = "none";
+  }
+});
+
+div2.appendChild(dropdownContent7);

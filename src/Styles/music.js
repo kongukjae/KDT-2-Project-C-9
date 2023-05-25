@@ -213,38 +213,8 @@ div3music2Content.style.alignItems = "center";
 div3music2Content.style.justifyContent = "center";
 div3music2Content.style.fontWeight = "bold";
 
-//노래추가하면 나오는 것. 임의로 작성
-let div3c_5 = maker("div", "id", "m3", div3_3);
-let div3c_6 = maker("div", "id", "m3Content", div3_4);
 
-const div3music3 = document.getElementById("m3");
-div3music3.style.height = "100%";
-div3music3.style.width = "40%";
-div3music3.style.border = "none";
-div3music3.style.marginLeft = "8%";
-div3music3.style.textAlign = "center";
-div3music3.style.backgroundImage = "url('/src/img/record.png')";
-div3music3.style.backgroundSize = "contain";
-div3music3.style.backgroundRepeat = "no-repeat";
-div3music3.style.display = "none";
 
-const div3music3Content = document.getElementById("m3Content");
-div3music3Content.style.height = "70%";
-div3music3Content.style.width = "40%";
-div3music3Content.style.border = "none";
-div3music3Content.style.marginLeft = "8%";
-div3music3Content.style.textAlign = "center";
-div3music3Content.style.backgroundColor = "#537DBD";
-div3music3Content.style.borderRadius = "30px";
-div3music3Content.textContent = "도영-like a star";
-div3music3Content.style.fontSize = "20px";
-div3music3Content.style.color = "white";
-div3music3Content.style.display = "flex";
-div3music3Content.style.alignItems = "center";
-div3music3Content.style.justifyContent = "center";
-div3music3Content.style.fontWeight = "bold";
-div3music3Content.style.paddingTop = "2%";
-div3music3Content.style.display = "none";
 
 // 카테고리 모달창
 function showModal() {
@@ -311,6 +281,40 @@ function showModal() {
 
   document.body.appendChild(modalBack);
 
+//노래추가하면 나오는 것. 임의로 작성
+let div3c_5 = maker("div", "id", "m3", div3_3);
+let div3c_6 = maker("div", "id", "m3Content", div3_4);
+
+const div3music3 = document.getElementById("m3");
+div3music3.style.height = "100%";
+div3music3.style.width = "40%";
+div3music3.style.border = "none";
+div3music3.style.marginLeft = "8%";
+div3music3.style.textAlign = "center";
+div3music3.style.backgroundImage = "url('/src/img/record.png')";
+div3music3.style.backgroundSize = "contain";
+div3music3.style.backgroundRepeat = "no-repeat";
+div3music3.style.display = "none";
+
+const div3music3Content = document.getElementById("m3Content");
+div3music3Content.style.height = "70%";
+div3music3Content.style.width = "40%";
+div3music3Content.style.border = "none";
+div3music3Content.style.marginLeft = "8%";
+div3music3Content.style.textAlign = "center";
+div3music3Content.style.backgroundColor = "#537DBD";
+div3music3Content.style.borderRadius = "30px";
+div3music3Content.style.fontSize = "20px";
+div3music3Content.style.color = "white";
+div3music3Content.style.display = "flex";
+div3music3Content.style.alignItems = "center";
+div3music3Content.style.justifyContent = "center";
+div3music3Content.style.fontWeight = "bold";
+div3music3Content.style.paddingTop = "2%";
+div3music3Content.style.display = "none";
+
+
+
   modalBack.addEventListener("click", function (event) {
     if (event.target === modalBack) {
       modalBack.remove();
@@ -321,7 +325,12 @@ function showModal() {
       modalContent.remove();
       modalBack.remove();
       div3music3.style.display = "block";
+         // 가수와 제목 입력한 값이 보인다.
       div3music3Content.style.display = "block";
+      const singer = p2.value;
+      const title = p4.value;
+      div3music3Content.textContent = `${singer} - ${title}`;
+
     }
   });
 }

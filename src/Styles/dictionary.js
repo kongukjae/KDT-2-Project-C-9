@@ -1,7 +1,3 @@
-/* 수정할 것
-1. 메뉴 클릭시 메뉴 이동
-2. 버튼에 맞는 링크 연결 */
-
 document.body.style.margin = "0px";
 
 // root

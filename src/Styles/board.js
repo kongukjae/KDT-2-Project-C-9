@@ -241,7 +241,29 @@ div3board5.style.height = "8%";
 div3board5.style.width = "100%";
 div3board5.style.backgroundColor = "#537DBD";
 div3board5.style.marginTop = "5%"; //게시글은 서로 띄어져있다.
+div3board5.style.display = "flex";
+div3board5.style.alignItems = "center";
+
+
+//게시글5
+let div3c_5a = maker("div", "id", "c5a", div3board5);
+const div3_5a = document.getElementById("c5a");
+
+div3_5a.textContent = "자랑";
+div3_5a.style.color = "#EEF49F";
+div3_5a.style.fontWeight = "bold";
+div3_5a.style.fontSize = "18px";
+div3_5a.style.marginLeft = "2%";
+
+let div3c_5b = maker("div", "id", "c5b", div3board5);
+const div3_5b = document.getElementById("c5b");
+div3_5b.textContent = "북두칠성 사진";
+div3_5b.style.color = "white";
+div3_5b.style.fontSize = "18px";
+div3_5b.style.marginLeft = "5%";
 let div3_6 = maker("div", "id", "board6", div3);
+
+
 const div3board6 = document.getElementById("board6");
 div3board6.style.backgroundColor = "#F9D67A";
 div3board6.style.height = "8%";

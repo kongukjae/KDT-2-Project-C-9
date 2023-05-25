@@ -141,10 +141,10 @@ div3_a.textContent = "자랑";
 div3_a.style.color = "#EEF49F";
 div3_a.style.fontWeight = "bold";
 div3_a.style.fontSize = "18px";
+div3_a.style.marginLeft = "2%";
 
 let div3c_2 = maker("div", "id", "c2", div3board);
 const div3_b = document.getElementById("c2");
-
 div3_b.textContent = "슈퍼문 찍었어요!";
 div3_b.style.color = "white";
 div3_b.style.fontSize = "18px";
@@ -159,6 +159,26 @@ div3board2.style.height = "8%";
 div3board2.style.width = "100%";
 div3board2.style.backgroundColor = "#537DBD";
 div3board2.style.marginTop = "5%"; //게시글은 서로 띄어져있다.
+div3board2.style.display = "flex";
+div3board2.style.alignItems = "center";
+
+//게시글2
+let div3c_2a = maker("div", "id", "c2a", div3board2);
+const div3_2a = document.getElementById("c2a");
+
+div3_2a.textContent = "정보";
+div3_2a.style.color = "#E473F6";
+div3_2a.style.fontWeight = "bold";
+div3_2a.style.fontSize = "18px";
+div3_2a.style.marginLeft = "2%";
+
+
+let div3c_2b = maker("div", "id", "c2b", div3board2);
+const div3_2b = document.getElementById("c2b");
+div3_2b.textContent = "5월 반영월식에 대해";
+div3_2b.style.color = "white";
+div3_2b.style.fontSize = "18px";
+div3_2b.style.marginLeft = "5%";
 
 let div3_3 = maker("div", "id", "board3", div3);
 const div3board3 = document.getElementById("board3");
@@ -167,6 +187,26 @@ div3board3.style.height = "8%";
 div3board3.style.width = "100%";
 div3board3.style.backgroundColor = "#537DBD";
 div3board3.style.marginTop = "5%"; //게시글은 서로 띄어져있다.
+div3board3.style.display = "flex";
+div3board3.style.alignItems = "center";
+
+//게시글3
+let div3c_3a = maker("div", "id", "c3a", div3board3);
+const div3_3a = document.getElementById("c3a");
+
+div3_3a.textContent = "궁금";
+div3_3a.style.color = "blue";
+div3_3a.style.fontWeight = "bold";
+div3_3a.style.fontSize = "18px";
+div3_3a.style.marginLeft = "2%";
+
+let div3c_3b = maker("div", "id", "c3b", div3board3);
+const div3_3b = document.getElementById("c3b");
+div3_3b.textContent = "강원도에서 달이 잘 보이는 곳은?";
+div3_3b.style.color = "white";
+div3_3b.style.fontSize = "18px";
+div3_3b.style.marginLeft = "5%";
+
 let div3_4 = maker("div", "id", "board4", div3);
 const div3board4 = document.getElementById("board4");
 div3board4.style.backgroundColor = "#F9D67A";
@@ -174,6 +214,26 @@ div3board4.style.height = "8%";
 div3board4.style.width = "100%";
 div3board4.style.backgroundColor = "#537DBD";
 div3board4.style.marginTop = "5%"; //게시글은 서로 띄어져있다.
+div3board4.style.display = "flex";
+div3board4.style.alignItems = "center";
+
+//게시글4
+let div3c_4a = maker("div", "id", "c4a", div3board4);
+const div3_4a = document.getElementById("c4a");
+
+div3_4a.textContent = "기타";
+div3_4a.style.color = "#B00DBE";
+div3_4a.style.fontWeight = "bold";
+div3_4a.style.fontSize = "18px";
+div3_4a.style.marginLeft = "2%";
+
+let div3c_4b = maker("div", "id", "c4b", div3board4);
+const div3_4b = document.getElementById("c4b");
+div3_4b.textContent = "내일 비온다던데";
+div3_4b.style.color = "white";
+div3_4b.style.fontSize = "18px";
+div3_4b.style.marginLeft = "5%";
+
 let div3_5 = maker("div", "id", "board5", div3);
 const div3board5 = document.getElementById("board5");
 div3board5.style.backgroundColor = "#F9D67A";

@@ -313,6 +313,9 @@ queryParams +=
   encodeURIComponent(currentDay); 
 xhr.open("GET", url + queryParams);
 
+
+
+
 //fix
 xhr.onload = function () {
   if (xhr.status === 200) {
@@ -326,6 +329,8 @@ xhr.onload = function () {
       c: "/src/img/c.png",
       d: "/src/img/d.png",
       e: "/src/img/e.png",
+      f: "/src/img/f.png",
+
     };
 
     const today = new Date().getDate(); // 오늘 날짜 가져오기
@@ -356,8 +361,6 @@ xhr.onload = function () {
             parseInt(currentMonth) === new Date().getMonth() + 1 &&
             parseInt(cell.innerText) === today
           ) {
-            const img = document.createElement("img");
-            // img.src = images.e; // 오늘 날짜에는 항상 이미지 e 보여주기??
 
             let imgSrc = "";
             if (lunAge >= 1 && lunAge <= 6.9) {
@@ -373,6 +376,7 @@ xhr.onload = function () {
             } else {
               imgSrc = images.e;
             }
+            const img = document.createElement("img");
             
             img.src = imgSrc;
             img.style.width = "50px";

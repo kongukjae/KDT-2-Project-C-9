@@ -298,7 +298,7 @@ var queryParams =
   "?" +
   encodeURIComponent("serviceKey") +
   "=" +
-  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D"; /*Service Key*/
+  "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D"; 
 queryParams +=
   "&" + encodeURIComponent("solYear") + "=" + encodeURIComponent(currentYear);
 queryParams +=
@@ -306,11 +306,11 @@ queryParams +=
   encodeURIComponent("solMonth") +
   "=" +
   encodeURIComponent("0" + currentMonth);
-queryParams +=
+/* queryParams +=
   "&" +
   encodeURIComponent("solDay") +
   "=" +
-  encodeURIComponent(currentDay); 
+  encodeURIComponent(currentDay);  */
 xhr.open("GET", url + queryParams);
 
 

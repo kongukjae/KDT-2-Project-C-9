@@ -82,9 +82,55 @@ div2.style.backgroundColor = "#325489";
 div2.style.display = "flex";
 div2.style.justifyContent = "flex-end"; //버튼을 오른쪽에 배치
 div2.style.alignItems = "flex-end"; //텍스트와 버튼을 하단 배치
+//fix
+//카테고리
+let divEx_1=maker('button','id','category1',div2)
+const div2EX_1 = document.getElementById("category1");
+div2EX_1.textContent = '전체';
+div2EX_1.onclick = function() {
+  showPosts('all');
+};
+
+
+let divEx_2=maker('button','id','category2',div2)
+const div2EX_2 = document.getElementById("category2");
+div2EX_2.textContent = '자랑';
+div2EX_2.onclick = function() {
+  showPosts('all');
+};
+
+let divEx_3=maker('button','id','category3',div2)
+const div2EX_3 = document.getElementById("category3");
+div2EX_3.textContent = '정보';
+div2EX_3.onclick = function() {
+  showPosts('all');
+};
+
+let divEx_4=maker('button','id','category4',div2)
+const div2EX_4 = document.getElementById("category4");
+div2EX_4.textContent = '궁금';
+div2EX_4.onclick = function() {
+  showPosts('all');
+};
+
+let divEx_5=maker('button','id','category5',div2)
+const div2EX_5 = document.getElementById("category5");
+div2EX_5.textContent = '기타';
+div2EX_5.onclick = function() {
+  showPosts('all');
+};
+
+
 //div2안에 있는 버튼3(카테고리), 버튼4(쓰기)
 let div2_1 = maker("button", "id", "button3", div2);
 let div2_2 = maker("button", "id", "button4", div2);
+
+
+
+
+
+
+
 
 // 버튼3 스타일
 const div2button = document.getElementById("button3");
@@ -136,7 +182,7 @@ div3board.addEventListener("click", function () {
 //게시글1
 let div3c_1 = maker("div", "id", "c1", div3board);
 const div3_a = document.getElementById("c1");
-
+div3_a.setAttribute("data-category", "자랑");
 div3_a.textContent = "자랑";
 div3_a.style.color = "#EEF49F";
 div3_a.style.fontWeight = "bold";
@@ -165,6 +211,7 @@ div3board2.style.alignItems = "center";
 //게시글2
 let div3c_2a = maker("div", "id", "c2a", div3board2);
 const div3_2a = document.getElementById("c2a");
+div3_2a.setAttribute("data-category", "정보");
 
 div3_2a.textContent = "정보";
 div3_2a.style.color = "#E473F6";
@@ -193,6 +240,7 @@ div3board3.style.alignItems = "center";
 //게시글3
 let div3c_3a = maker("div", "id", "c3a", div3board3);
 const div3_3a = document.getElementById("c3a");
+div3_3a.setAttribute("data-category", "궁금");
 
 div3_3a.textContent = "궁금";
 div3_3a.style.color = "blue";
@@ -220,6 +268,7 @@ div3board4.style.alignItems = "center";
 //게시글4
 let div3c_4a = maker("div", "id", "c4a", div3board4);
 const div3_4a = document.getElementById("c4a");
+div3_4a.setAttribute("data-category", "기타");
 
 div3_4a.textContent = "기타";
 div3_4a.style.color = "#B00DBE";
@@ -248,6 +297,7 @@ div3board5.style.alignItems = "center";
 //게시글5
 let div3c_5a = maker("div", "id", "c5a", div3board5);
 const div3_5a = document.getElementById("c5a");
+div3_5a.setAttribute("data-category", "자랑");
 
 div3_5a.textContent = "자랑";
 div3_5a.style.color = "#EEF49F";
@@ -263,6 +313,19 @@ div3_5b.style.fontSize = "18px";
 div3_5b.style.marginLeft = "5%";
 let div3_6 = maker("div", "id", "board6", div3);
 
+//fix2
+function showPosts(category) {
+  // const posts = document.getElementById(`c{i}a`);
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i];
+    const posts = document.getElementById(`c{i}a`);
+    if (category === "all" || post.getAttribute("data-category") === category) {
+      post.style.display = "block";
+    } else {
+      post.style.display = "none";
+    }
+  }
+}
 
 const div3board6 = document.getElementById("board6");
 div3board6.style.backgroundColor = "#F9D67A";

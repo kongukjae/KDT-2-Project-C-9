@@ -452,8 +452,39 @@ function showModal() {
   });
 }
 
-div2button.addEventListener("click", showModal);
 
+
+div2EX_1.onclick = function () {
+  showBoard([div3board, div3board2, div3board3, div3board4, div3board5]);
+};
+
+div2EX_2.onclick = function () {
+  showBoard([div3board, div3board5], [div3board2, div3board3, div3board4]);
+};
+
+div2EX_3.onclick = function () {
+  showBoard([div3board2], [div3board, div3board3, div3board4, div3board5]);
+};
+
+div2EX_4.onclick = function () {
+  showBoard([div3board3], [div3board, div3board2, div3board4, div3board5]);
+};
+
+div2EX_5.onclick = function () {
+  showBoard([div3board4], [div3board, div3board2, div3board3, div3board5]);
+};
+
+function showBoard(show, hide) {
+  show.forEach(function (element) {
+    element.style.display = "block";
+  });
+
+  if (hide) {
+    hide.forEach(function (element) {
+      element.style.display = "none";
+    });
+  }
+}
 // 🍔메뉴창
 const menuContainer = document.createElement("div");
 root.appendChild(menuContainer);

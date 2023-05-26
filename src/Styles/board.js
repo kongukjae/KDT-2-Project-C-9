@@ -321,6 +321,76 @@ div4button2.style.backgroundColor = "transparent";
 div4button2.style.border = "none";
 div4button2.style.color = "white";
 
+
+// 카테고리 모달창
+function showModal() {
+  const modalBack = document.createElement("div");
+  modalBack.style.position = "fixed";
+  modalBack.style.top = "0";
+  modalBack.style.left = "0";
+  modalBack.style.width = "100%";
+  modalBack.style.height = "100%";
+  modalBack.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+  modalBack.style.display = "flex";
+  modalBack.style.justifyContent = "center";
+  modalBack.style.alignItems = "center";
+  modalBack.style.zIndex = "1";
+
+  const modalContent = document.createElement("div");
+  modalContent.style.backgroundColor = "#6376A6";
+  modalContent.style.padding = "20px";
+  modalContent.style.fontSize = "18px";
+  modalContent.style.width = "70%";
+
+  modalContent.style.textAlign = "center";
+
+  const modalTitle = document.createElement("p");
+  modalTitle.textContent = "카테고리";
+  modalTitle.style.fontWeight = "bold";
+
+  const p1 = document.createElement("p");
+  p1.textContent = "자랑";
+  p1.style.fontSize = "25px";
+  p1.style.color = "#EEF49F";
+  p1.style.fontWeight = "bold";
+
+  const p2 = document.createElement("p");
+  p2.textContent = "정보";
+  p2.style.fontSize = "25px";
+  p2.style.color = "#E473F6";
+  p2.style.fontWeight = "bold";
+
+  const p3 = document.createElement("p");
+  p3.textContent = "궁금";
+  p3.style.fontSize = "25px";
+  p3.style.color = "blue";
+  p3.style.fontWeight = "bold";
+
+  const p4 = document.createElement("p");
+  p4.textContent = "기타";
+  p4.style.fontSize = "25px";
+  p4.style.color = "#B00DBE";
+  p4.style.fontWeight = "bold";
+
+  modalContent.appendChild(modalTitle);
+  modalContent.appendChild(p1);
+  modalContent.appendChild(p2);
+  modalContent.appendChild(p3);
+  modalContent.appendChild(p4);
+
+  modalBack.appendChild(modalContent);
+
+  document.body.appendChild(modalBack);
+
+  modalBack.addEventListener("click", function (event) {
+    if (event.target === modalBack) {
+      modalBack.remove();
+    }
+  });
+}
+
+div2button.addEventListener("click", showModal);
+
 // 🍔메뉴창
 const menuContainer = document.createElement("div");
 root.appendChild(menuContainer);

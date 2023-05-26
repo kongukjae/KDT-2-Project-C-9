@@ -383,7 +383,7 @@ xhr.onload = function () {
             img.style.height = "50px";
             cell.appendChild(img);
             
-          } else {
+          } else { //해당하는 날짜에 맞는 lunAge를 보여주기 
             let imgSrc = "";
             if (lunAge >= 1 && lunAge <= 6.9) {
               imgSrc = images.f;

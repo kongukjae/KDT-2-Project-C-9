@@ -61,7 +61,7 @@ div1button2.style.backgroundSize = "cover";
 div1button2.style.backgroundColor = "transparent"; //버튼 색 투명
 div1button2.style.border = "none"; //테두리 X
 
-//fix
+//버튼 3
 const div1button3 = document.getElementById("button30");
 div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
 div1button3.style.backgroundSize = "cover";
@@ -80,11 +80,10 @@ div1button3.addEventListener("click", function() {
     div1button3.style.backgroundImage = 'url("/src/img/moon.png")';
   }
 });
-
-
 div1button3.style.height = "25px";
 div1button3.style.width = "25px";
 div1button3.style.margin = "5px";
+
 
 
 
@@ -588,4 +587,3 @@ function showModal() {
 }
 
 div5button.addEventListener("click", showModal);
-

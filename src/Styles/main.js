@@ -205,37 +205,72 @@ xhr.onload = function () {
           a++;
         } else {
           cell.innerText = a;
-          a++;
-    
-          // 각 날짜에 대해 이미지를 가져오기 위해 solDay 값을 동적으로 할당
           const solDay = a < 10 ? "0" + a : a; // 날짜가 한 자리 수일 경우 앞에 0을 붙여 두 자리로 만듦
+          a++;
+
+          const queryParams = "?" +
+            encodeURIComponent("serviceKey") +
+            "=" +
+            "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D" +
+            "&" +
+            encodeURIComponent("solYear") +
+            "=" +
+            encodeURIComponent(currentYear) +
+            "&" +
+            encodeURIComponent("solMonth") +
+            "=" +
+            encodeURIComponent("0" + currentMonth) +
+            "&" +
+            encodeURIComponent("solDay") +
+            "=" +
+            encodeURIComponent(solDay);
     
-          const lunAge = moon(xmlData, currentYear, currentMonth, solDay); // lunAge를 계산하고 할당
+          // API 요청
+          const xhr = new XMLHttpRequest();
+          const url = "http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo";
+          xhr.open("GET", url + queryParams);
     
-          // 해당하는 날짜에 이미지 보여주기
-          let imgSrc = "";
-          if (lunAge >= 1 && lunAge <= 6.9) {
-            imgSrc = images.f;
-          } else if (lunAge > 6.9 && lunAge <= 12.9) {
-            imgSrc = images.d;
-          } else if (lunAge > 12.9 && lunAge <= 15.9) {
-            imgSrc = images.c;
-          } else if (lunAge > 15.9 && lunAge <= 22.9) {
-            imgSrc = images.b;
-          } else if (lunAge > 22.9 && lunAge <= 29.9) {
-            imgSrc = images.a;
-          } else {
-            imgSrc = images.e;
-          }
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              const xmlData = xhr.responseText;
     
-          const img = document.createElement("img");
-          img.src = imgSrc;
-          img.style.width = "50px";
-          img.style.height = "50px";
-          cell.appendChild(img);
+              const lunAge = moon(xmlData); // lunAge 계산
+    
+              // 해당하는 날짜에 이미지 보여주기
+              let imgSrc = "";
+              if (lunAge >= 1 && lunAge <= 6.9) {
+                imgSrc = images.f;
+              } else if (lunAge > 6.9 && lunAge <= 12.9) {
+                imgSrc = images.d;
+              } else if (lunAge > 12.9 && lunAge <= 15.9) {
+                imgSrc = images.c;
+              } else if (lunAge > 15.9 && lunAge <= 22.9) {
+                imgSrc = images.b;
+              } else if (lunAge > 22.9 && lunAge <= 29.9) {
+                imgSrc = images.a;
+              } else {
+                imgSrc = images.e;
+              }
+    
+              const img = document.createElement("img");
+              img.src = imgSrc;
+              img.style.width = "50px";
+              img.style.height = "50px";
+              cell.appendChild(img);
+            } else {
+              console.error("Error:", xhr.statusText);
+            }
+          };
+    
+          xhr.onerror = function () {
+            console.error("Error:", xhr.statusText);
+          };
+    
+          xhr.send();
         }
       }
     }
+    
     // td 스타일
     const tds = document.querySelectorAll("td");
     tds.forEach((td) => {

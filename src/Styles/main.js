@@ -73,11 +73,87 @@ div1button3.addEventListener("click", function() {
     div3.style.backgroundColor = "";
     div5.style.backgroundColor = "";
     div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
+    //월출
+    function getMoonriseValue(xmlData) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+      const moonrise = xmlDoc.querySelector("moonrise").textContent.trim();
+      return moonrise;
+    }
+    // 월몰 
+    function moonSetAPI(xmlData) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+      const moonset = xmlDoc.querySelector("moonset").textContent.trim();
+      return moonset;
+    }
+    
+    var xhr1 = new XMLHttpRequest();
+    var url1 =
+      "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
+    var queryParams1 =
+      "?" +
+      encodeURIComponent("serviceKey") +
+      "=" +
+      "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+    queryParams1 +=
+      "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent(date); //YYYYMMDD로 보이게 하기
+    queryParams1 +=
+      "&" + encodeURIComponent("location") + "=" + encodeURIComponent("서울");
+    xhr1.open("GET", url1 + queryParams1);
+    xhr1.onreadystatechange = function () {
+      if (xhr1.readyState === 4 && xhr1.status === 200) {
+        var moonriseValue = getMoonriseValue(xhr1.response);
+        var moonsetValue = moonSetAPI(xhr1.response);
+        const div3text = document.getElementById("text");
+        div3text.textContent =
+          "월출시각:" + moonriseValue + " ,월몰시각:" + moonsetValue;
+      }
+    };
+    xhr1.send(); 
   } else {
     div1.style.backgroundColor = "#F7EAA9";
     div3.style.backgroundColor = "#F7EAA9";
     div5.style.backgroundColor = "#F7EAA9";
     div1button3.style.backgroundImage = 'url("/src/img/moon.png")';
+    //일출
+    function getsunriseValue(xmlData) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+      const sunrise = xmlDoc.querySelector("sunrise").textContent.trim();
+      return sunrise;
+    }
+    // 일몰
+    function getsunsetValue(xmlData) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+      const sunset = xmlDoc.querySelector("sunset").textContent.trim();
+      return sunset;
+    }
+    
+    var xhr1 = new XMLHttpRequest();
+    var url1 =
+      "http://apis.data.go.kr/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo";
+    var queryParams1 =
+      "?" +
+      encodeURIComponent("serviceKey") +
+      "=" +
+      "sLG8GxH%2BnJvDMU0R5HXBeGf0uKnmavrshGmvC%2F6x9JHxF1aAqG2gImPUoAnS0HcwF3u9y7VvXKUm%2B1skVniFcQ%3D%3D";
+    queryParams1 +=
+      "&" + encodeURIComponent("locdate") + "=" + encodeURIComponent(date); //YYYYMMDD로 보이게 하기
+    queryParams1 +=
+      "&" + encodeURIComponent("location") + "=" + encodeURIComponent("서울");
+    xhr1.open("GET", url1 + queryParams1);
+    xhr1.onreadystatechange = function () {
+      if (xhr1.readyState === 4 && xhr1.status === 200) {
+        var sunriseValue = getsunriseValue(xhr1.response);
+        var sunsetValue = getsunsetValue(xhr1.response);
+        const div3text = document.getElementById("text");
+        div3text.textContent =
+          "일출시각:" + sunriseValue + " ,일몰시각:" + sunsetValue;
+      }
+    };
+    xhr1.send(); 
   }
 });
 div1button3.style.height = "25px";
@@ -453,6 +529,7 @@ xhr.onerror = function () {
 xhr.send();
 
 // 월출, 월몰 api
+/* fix
 // 월출 API
 function getMoonriseValue(xmlData) {
   // XML 데이터에서 moonrise 값을 가져오는 함수
@@ -491,7 +568,7 @@ xhr1.onreadystatechange = function () {
       "월출시각:" + moonriseValue + " ,월몰시각:" + moonsetValue;
   }
 };
-xhr1.send();
+xhr1.send(); */
 
 // 천문현상 설명 api
 // 천문현상명(날짜 포함) astroTitle  천문현상설명 astroEvent

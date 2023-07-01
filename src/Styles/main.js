@@ -521,7 +521,7 @@ function showModal() {
   modalBack.style.zIndex = "9999";
 
   const modalTitle = document.createElement("p");
-  modalTitle.textContent = "봄철 별자리";
+  modalTitle.textContent = "여름철 별자리";
   modalTitle.style.fontWeight = "bold";
 
   const modalContent = document.createElement("div");
@@ -535,11 +535,12 @@ function showModal() {
   img1.setAttribute("id", "img1");
   img1.style.width = "20%";
   img1.style.height = "30%";
-  img1.src = "/src/img/leo.png";
+  img1.src = "/src/img/cygnus.png";
 
   const p1 = document.createElement("p");
-  p1.textContent =
-    "사자자리:황도 12궁에 속하는 별자리이다. 서쪽의 게자리와 동쪽의 처녀자리 사이에 놓여 있다. 봄철 초저녁 하늘에서 찾아볼 수 있는 별자리이다.";
+  /* p1.textContent =
+    "사자자리:황도 12궁에 속하는 별자리이다. 서쪽의 게자리와 동쪽의 처녀자리 사이에 놓여 있다. 봄철 초저녁 하늘에서 찾아볼 수 있는 별자리이다."; */
+    p1.textContent="백조자리:여름철 북쪽 하늘에서 찾아볼 수 있는 별자리다.은하수 위에 날개를 펼친 백조의 모습을 하고 있다."
   p1.style.fontSize = "15px";
 
   modalContent.appendChild(modalTitle);

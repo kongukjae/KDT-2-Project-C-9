@@ -8,35 +8,51 @@
   <title>회원가입</title>
   <style>
     body {
-        text-align: center;
+      text-align: center;
+    }
+
+    #root {
+      background-color: #325489;
+      height: 844px;
+      margin: 0 auto;
+      max-width: 390px;
+      width: 100%;
+    }
+
+    @media (min-width: 391px) {
+      body {
+        background-color: #EDEDED;
       }
-      
+
       #root {
-        background-color: #325489;
+        background-color: #EDEDED;
         height: 844px;
         margin: 0 auto;
-        max-width: 390px;
+        max-width: 960px;
         width: 100%;
       }
-      
-      @media (min-width: 391px) {
-        body {
-          background-color: #EDEDED;
-        }
-        
-        #root {
-          background-color: #EDEDED;
-          height: 844px;
-          margin: 0 auto;
-          max-width: 960px;
-          width: 100%;
-        }
-      }
-  
-    </style>
+    }
+  </style>
 </head>
 
 <body>
+  <form id="signup-form">
+    <label for="id">아이디:</label>
+    <input type="text" id="id" name="id" required><br>
+
+    <label for="password">비밀번호:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="region">지역:</label>
+    <select id="region" name="region">
+      <option value="대전">대전</option>
+      <option value="서울">서울</option>
+      <option value="부산">부산</option>
+    </select><br>
+
+    <button type="submit">가입</button>
+  </form>
+
   <script src="/src/Styles/sign-up.js"></script>
 </body>
 

@@ -30,6 +30,8 @@ div1.style.position = "relative";
 //div1안에 있는 버튼1(logo), 버튼2(menu)
 let button1 = maker("button", "id", "button1", div1);
 let button2 = maker("button", "id", "button2", div1);
+let button3 = maker("button", "id", "button30", div1);
+
 // 버튼1 스타일
 const div1button = document.getElementById("button1");
 div1button.style.height = "45%";
@@ -58,6 +60,33 @@ div1button2.style.backgroundImage = "url('/src/img/menu.png')";
 div1button2.style.backgroundSize = "cover";
 div1button2.style.backgroundColor = "transparent"; //버튼 색 투명
 div1button2.style.border = "none"; //테두리 X
+
+//fix
+const div1button3 = document.getElementById("button30");
+div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
+div1button3.style.backgroundSize = "cover";
+div1button3.style.backgroundColor = "transparent"; //버튼 색 투명
+div1button3.style.border = "none"; //테두리 X
+div1button3.addEventListener("click", function() {
+  if (div1.style.backgroundColor === "rgb(247, 234, 169)") {
+    div1.style.backgroundColor = "#325489";
+    div3.style.backgroundColor = "";
+    div5.style.backgroundColor = "";
+    div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
+  } else {
+    div1.style.backgroundColor = "#F7EAA9";
+    div3.style.backgroundColor = "#F7EAA9";
+    div5.style.backgroundColor = "#F7EAA9";
+    div1button3.style.backgroundImage = 'url("/src/img/moon.png")';
+  }
+});
+
+
+div1button3.style.height = "25px";
+div1button3.style.width = "25px";
+div1button3.style.margin = "5px";
+
+
 
 // ⭐div2 스타일
 const div2 = document.getElementById("div2");
@@ -559,3 +588,4 @@ function showModal() {
 }
 
 div5button.addEventListener("click", showModal);
+

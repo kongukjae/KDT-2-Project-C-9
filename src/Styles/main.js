@@ -74,6 +74,8 @@ div1button3.addEventListener("click", function() {
     div3.style.backgroundColor = "";
     div5.style.backgroundColor = "";
     div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
+    div1button.style.backgroundImage = "url('/src/img/logo.png')";
+
     //월출
     function getMoonriseValue(xmlData) {
       const parser = new DOMParser();
@@ -117,6 +119,8 @@ div1button3.addEventListener("click", function() {
     div3.style.backgroundColor = "#F7EAA9";
     div5.style.backgroundColor = "#F7EAA9";
     div1button3.style.backgroundImage = 'url("/src/img/moon.png")';
+    div1button.style.backgroundImage = "url('/src/img/logoSun.png')";
+
     //일출
     function getsunriseValue(xmlData) {
       const parser = new DOMParser();
@@ -430,7 +434,7 @@ xhr.onload = function () {
 
     const today = new Date().getDate(); // 오늘 날짜 가져오기
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) { //fix
       const row = document.createElement("tr");
       calendarTable.appendChild(row);
     

@@ -62,6 +62,7 @@ div1button2.style.backgroundColor = "transparent"; //버튼 색 투명
 div1button2.style.border = "none"; //테두리 X
 
 //버튼 3
+//fix
 const div1button3 = document.getElementById("button30");
 div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
 div1button3.style.backgroundSize = "cover";
@@ -529,7 +530,7 @@ xhr.onerror = function () {
 xhr.send();
 
 // 월출, 월몰 api
-/* fix
+//fix
 // 월출 API
 function getMoonriseValue(xmlData) {
   // XML 데이터에서 moonrise 값을 가져오는 함수
@@ -568,7 +569,7 @@ xhr1.onreadystatechange = function () {
       "월출시각:" + moonriseValue + " ,월몰시각:" + moonsetValue;
   }
 };
-xhr1.send(); */
+xhr1.send();
 
 // 천문현상 설명 api
 // 천문현상명(날짜 포함) astroTitle  천문현상설명 astroEvent

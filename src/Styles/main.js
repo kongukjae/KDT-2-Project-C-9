@@ -62,7 +62,6 @@ div1button2.style.backgroundColor = "transparent"; //버튼 색 투명
 div1button2.style.border = "none"; //테두리 X
 
 //버튼 3
-//fix
 const div1button3 = document.getElementById("button30");
 div1button3.style.backgroundImage = 'url("/src/img/sun.png")';
 div1button3.style.backgroundSize = "cover";
@@ -380,7 +379,7 @@ dateContainer.appendChild(dateText);
 
 const calendarTable = document.createElement("table");
 div4.appendChild(calendarTable);
-calendarTable.style.height = "90%";
+calendarTable.style.height = "90%"; //fix
 calendarTable.style.width = "100%";
 
 const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
@@ -434,7 +433,7 @@ xhr.onload = function () {
 
     const today = new Date().getDate(); // 오늘 날짜 가져오기
 
-    for (let i = 0; i < 5; i++) { //fix
+    for (let i = 0; i < 5; i++) { //5주만 보이게 함
       const row = document.createElement("tr");
       calendarTable.appendChild(row);
     
@@ -493,7 +492,7 @@ xhr.onload = function () {
                 imgSrc = images.c;
               } else if (lunAge > 15.9 && lunAge <= 22.9) {
                 imgSrc = images.b;
-              } else if (lunAge > 22.9 && lunAge <= 29.9) {
+              } else if (lunAge > 22.9 && lunAge <= 26.9) {
                 imgSrc = images.a;
               } else {
                 imgSrc = images.e;
@@ -523,6 +522,7 @@ xhr.onload = function () {
     tds.forEach((td) => {
       td.style.padding = "0";
       td.style.verticalAlign = "top";
+      td.style.verticalAlign = "top";
     });
   } else {
     console.error("Error:", xhr.statusText);
@@ -534,7 +534,6 @@ xhr.onerror = function () {
 xhr.send();
 
 // 월출, 월몰 api
-//fix
 // 월출 API
 function getMoonriseValue(xmlData) {
   // XML 데이터에서 moonrise 값을 가져오는 함수

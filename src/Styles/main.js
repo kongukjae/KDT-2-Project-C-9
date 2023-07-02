@@ -397,7 +397,7 @@ function moon(xmlData) {
 
 const xhr = new XMLHttpRequest();
 var url =
-  "http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo"; /*URL*/
+  "http://apis.data.go.kr/B090041/openapi/service/LunPhInfoService/getLunPhInfo";
 var queryParams =
   "?" +
   encodeURIComponent("serviceKey") +
@@ -432,14 +432,51 @@ xhr.onload = function () {
     };
 
     const today = new Date().getDate(); // 오늘 날짜 가져오기
-
     for (let i = 0; i < 5; i++) { //5주만 보이게 함
       const row = document.createElement("tr");
       calendarTable.appendChild(row);
-    
+      
       for (let j = 0; j < 7; j++) {
         const cell = document.createElement("td");
         row.appendChild(cell);
+        
+        //edit
+ // 이미지 첨부를 위한 입력 요소 추가
+ const input = document.createElement("input");
+ input.type = "file";
+ input.style.display = "none"; // 숨겨진 상태로 시작
+ cell.appendChild(input);
+
+ // 클릭 이벤트 리스너 추가
+ cell.addEventListener("click", () => {
+   input.click(); // 입력 요소 클릭
+ });
+
+ // 입력 요소의 변경 이벤트 리스너 추가
+ input.addEventListener("change", (event) => {
+   const file = event.target.files[0]; // 선택한 파일 가져오기
+
+   // 선택한 파일을 이미지로 표시
+   const img = document.createElement("img");
+   img.src = URL.createObjectURL(file);
+   img.style.width = "50px";
+   img.style.height = "50px";
+   cell.innerHTML = ""; // 이전 내용 제거
+   cell.appendChild(img);
+
+   // 이미지를 저장하고 이전 이미지 대체
+   const date = cell.innerText; // 선택한 날짜 가져오기
+   localStorage.setItem(date, img.src); // 이미지 저장
+
+   // 이전에 저장한 이미지가 있으면 대체
+   const previousImage = localStorage.getItem(date);
+   if (previousImage) {
+     img.src = previousImage;
+   }})
+
+
+        //edit
+
     
         if (i === 0 && j < firstDayOfMonth) {
           cell.innerText = lastMonthDate;
@@ -532,6 +569,7 @@ xhr.onerror = function () {
   console.error("Error:", xhr.statusText);
 };
 xhr.send();
+//edit
 
 // 월출, 월몰 api
 // 월출 API

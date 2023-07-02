@@ -77,17 +77,16 @@ div1button2.style.border = "none"; //테두리 X
 
 // ⭐div2 스타일
 const div2 = document.getElementById("div2");
-div2.style.height = "50%";
+div2.style.height = "46%";
 div2.style.backgroundColor = "#D9D9D9";
 div2.style.display = "flex";
 div2.style.flexDirection = "row";
 
-//수정
-// div2에 표시될 이미지 파일명 배열
-const images = ['a.png', 'b.png', 'c.png'];
-let currentImageIndex = 0; // 현재 표시되는 이미지 인덱스
+// 우주의 이것저것(정보) 슬라이드
+const images = ['tip1.jpg', 'tip2.jpg', 'tip3.jpg', 'tip4.jpg', 'tip5.jpg', 'tip6.jpg'];
+let currentImageIndex = 0;
 
-// div2에 이미지를 표시하는 함수
+// div2 이미지 슬라이드
 function showImage() {
   const div2 = document.getElementById('div2');
   div2.style.backgroundImage = `url('/src/img/${images[currentImageIndex]}')`;
@@ -97,27 +96,24 @@ function showImage() {
 
 // 이미지 전환을 위한 타이머 설정
 let timer = setInterval(() => {
-  // 다음 이미지로 인덱스 증가
   currentImageIndex = (currentImageIndex + 1) % images.length;
   showImage();
-}, 3000); // 3초마다 이미지 전환
+}, 3000); // 3초 설정
 
-// c.png가 마지막 이미지일 때 다시 a.png로 돌아가는 함수
+//마지막사진->첫번째 사진
 function resetImage() {
   clearInterval(timer); // 기존 타이머 제거
-  currentImageIndex = 0; // a.png로 인덱스 초기화
-  showImage(); // a.png 표시
+  currentImageIndex = 0; // 인덱스 초기화
+  showImage(); 
 
-  // 새로운 타이머 설정 (c.png가 마지막 이미지에서 다시 시작)
+  // 새로운 타이머 설정 
   timer = setInterval(() => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     showImage();
-  }, 3000); // 3초마다 이미지 전환
+  }, 3000); // 3초 설정
 }
-
 // 페이지 로드 시 첫 번째 이미지 표시
 showImage();
-//수정
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");

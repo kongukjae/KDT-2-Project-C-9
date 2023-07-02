@@ -352,6 +352,7 @@ const menuItems = [
   "📋게시판",
   "🎤노래소개",
   "📘우주 사전",
+  "🌠우주 이것저것",
   "😎마이페이지",
   "🔑로그인·회원가입",
 ];
@@ -367,6 +368,8 @@ for (let i = 0; i < menuItems.length; i++) {
   } else if (i === 2) {
     menuItem.href = "dictionary.html";
   } else if (i === 3) {
+    menuItem.href = "space.html";
+  } else if (i === 4) {
     menuItem.href = "mypage.html";
   } else {
     menuItem.href = "sign-in.html";

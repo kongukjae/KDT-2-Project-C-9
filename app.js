@@ -76,6 +76,10 @@ const server = http.createServer(async (req, res) => {
         const data = await fs.readFile(path.join(__dirname, 'src/html/sign-up.html'));
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
         return res.end(data);
+      }else if (req.url === '/space.html') {
+        const data = await fs.readFile(path.join(__dirname, 'src/html/space.html'));
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        return res.end(data);
       }
       try {
         const data = await fs.readFile(path.join(__dirname, req.url));

@@ -82,11 +82,14 @@ div2.style.backgroundColor = "#325489";
 div2.style.display = "flex";
 div2.style.justifyContent = "flex-end"; //버튼을 오른쪽에 배치
 div2.style.alignItems = "flex-end"; //텍스트와 버튼을 하단 배치
-//fix
+
 //카테고리
 let divEx_1=maker('button','id','category1',div2)
 const div2EX_1 = document.getElementById("category1");
 div2EX_1.textContent = '전체';
+div2EX_1.style.backgroundColor = "transparent";
+div2EX_1.style.border = "none";
+div2EX_1.style.color="white"
 div2EX_1.onclick = function() {
   showPosts('all');
 };
@@ -95,6 +98,9 @@ div2EX_1.onclick = function() {
 let divEx_2=maker('button','id','category2',div2)
 const div2EX_2 = document.getElementById("category2");
 div2EX_2.textContent = '자랑';
+div2EX_2.style.backgroundColor = "transparent";
+div2EX_2.style.border = "none";
+div2EX_2.style.color="white"
 div2EX_2.onclick = function() {
   showPosts('all');
 };
@@ -102,6 +108,9 @@ div2EX_2.onclick = function() {
 let divEx_3=maker('button','id','category3',div2)
 const div2EX_3 = document.getElementById("category3");
 div2EX_3.textContent = '정보';
+div2EX_3.style.backgroundColor = "transparent";
+div2EX_3.style.border = "none";
+div2EX_3.style.color="white"
 div2EX_3.onclick = function() {
   showPosts('all');
 };
@@ -109,6 +118,9 @@ div2EX_3.onclick = function() {
 let divEx_4=maker('button','id','category4',div2)
 const div2EX_4 = document.getElementById("category4");
 div2EX_4.textContent = '궁금';
+div2EX_4.style.backgroundColor = "transparent";
+div2EX_4.style.border = "none";
+div2EX_4.style.color="white"
 div2EX_4.onclick = function() {
   showPosts('all');
 };
@@ -116,23 +128,22 @@ div2EX_4.onclick = function() {
 let divEx_5=maker('button','id','category5',div2)
 const div2EX_5 = document.getElementById("category5");
 div2EX_5.textContent = '기타';
+div2EX_5.style.backgroundColor = "transparent";
+div2EX_5.style.border = "none";
+div2EX_5.style.color="white"
 div2EX_5.onclick = function() {
   showPosts('all');
 };
 
 
 //div2안에 있는 버튼3(카테고리), 버튼4(쓰기)
-let div2_1 = maker("button", "id", "button3", div2);
+// let div2_1 = maker("button", "id", "button3", div2);
 let div2_2 = maker("button", "id", "button4", div2);
 
 
 
 
-
-
-
-
-// 버튼3 스타일
+/* // 버튼3 스타일
 const div2button = document.getElementById("button3");
 div2button.style.height = "55%";
 div2button.style.width = "10%";
@@ -142,7 +153,7 @@ div2button.style.backgroundImage = "url('/src/img/tag.png')";
 div2button.style.backgroundColor = "transparent"; //버튼 색 투명
 div2button.style.border = "none"; //테두리 X
 div2button.style.backgroundSize = "contain"; //이미지가 다 보이게
-div2button.style.backgroundRepeat = "no-repeat"; //이미지 반복X
+div2button.style.backgroundRepeat = "no-repeat"; //이미지 반복X */
 
 // 버튼4 스타일
 const div2button2 = document.getElementById("button4");

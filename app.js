@@ -1,6 +1,28 @@
 const http = require('http');
 const fs = require('fs').promises;
 const path = require('path');
+const mysql = require('mysql2');
+// MySQL 연결 정보를 설정합니다
+const connection = mysql.createConnection({
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'yujin324',
+  port:3306,
+  database: 'sign',
+  insecureAuth : true
+
+
+});
+
+
+// MySQL에 연결합니다
+connection.connect(function(err) {
+  if (err) {
+    console.error('MySQL 연결 실패:', err);
+    return;
+  }
+  console.log('MySQL 연결 성공');
+});
 
 const server = http.createServer(async (req, res) => {
   try {

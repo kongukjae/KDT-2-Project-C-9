@@ -1,7 +1,3 @@
-/* 수정할 것
-1. 지역 추가하기
-2. 지역 선택하면 메인에 있는 월출·월몰 시각이 지역에 맞게 보여주기 */
-
 document.body.style.margin = "0px";
 
 // root
@@ -125,17 +121,6 @@ div2input3.setAttribute("type", "password");
 div2input3.style.height = "20%";
 div2input3.style.width = "70%";
 div2input3.style.marginLeft = "14%";
-// 옵션 추가
-/* 하나하나 쓰는 방법
-var option1 = document.createElement("option");
-option1.value = "option1";
-option1.text = "가거도";
-localSelect.appendChild(option1);
-
-var option2 = document.createElement("option");
-option2.value = "option2";
-option2.text = "가평";
-localSelect.appendChild(option2); */
 
 //for문 사용하여 위의 코드 간단하게 나타냄
 var select = document.getElementById("localSelect");
@@ -177,15 +162,43 @@ for (var i = 0; i < options.length; i++) {
 select.setAttribute("size", options.length);
 
 //가입 INPUT
-const div2input4 = document.getElementById("submit");
-div2input4.setAttribute("type", "submit");
-div2input4.style.height = "5%";
-div2input4.style.width = "70%";
-div2input4.style.marginTop = "12%";
-div2input4.style.marginLeft = "14%";
-div2input4.value = "회원가입";
+const submitButton  = document.getElementById("submit");
+submitButton .setAttribute("type", "submit");
+submitButton .style.height = "5%";
+submitButton .style.width = "70%";
+submitButton .style.marginTop = "12%";
+submitButton .style.marginLeft = "14%";
+submitButton .value = "회원가입";
 
-div2input4.addEventListener("click", function () {
-  // 회원가입 완료-> 메인 페이지로 이동
-  window.location.href = "main.html";
+submitButton.addEventListener("click", function () {
+  // 입력된 ID, 비밀번호, 지역 정보를 가져옵니다
+  const idInput = document.getElementById('idInput').value;
+  const pwInput = document.getElementById('pwInput').value;
+  const localSelect = document.getElementById('localSelect').value;
+  let localSelectText = '';
+
+  // localSelect에서 text(지역)만 저장
+  if (options && options.length > 0) {
+    for (let i = 0; i < options.length; i++) {
+      if (options[i].value === localSelect) {
+        localSelectText = options[i].text;
+        break;
+      }
+    }
+  }
+
+  // MySQL에 데이터를 삽입하는 쿼리를 작성합니다
+  const query = `INSERT INTO users (id, password, location) VALUES ('${idInput}', '${pwInput}', '${localSelectText}')`;
+
+  // 쿼리를 실행하여 MySQL에 데이터를 전송합니다
+  connection.query(query, function (err, result) {
+    if (err) {
+      console.error('MySQL 데이터 전송 실패:', err.message);
+      return;
+    }
+    console.log('MySQL 데이터 전송 성공');
+    // 회원가입 완료 -> 메인 페이지로 이동
+    window.location.href = "main.html";
+  });
 });
+

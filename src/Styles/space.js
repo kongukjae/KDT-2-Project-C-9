@@ -98,7 +98,7 @@ function showImage() {
 let timer = setInterval(() => {
   currentImageIndex = (currentImageIndex + 1) % images.length;
   showImage();
-}, 3000); // 3초 설정
+}, 5000); // 5초 설정
 
 //마지막사진->첫번째 사진
 function resetImage() {
@@ -110,10 +110,81 @@ function resetImage() {
   timer = setInterval(() => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     showImage();
-  }, 3000); // 3초 설정
+  }, 5000); // 5초 설정
 }
 // 페이지 로드 시 첫 번째 이미지 표시
 showImage();
+
+//시간뿐만 아니라 드래그로 넘어갈 수 있게 제작
+div2.addEventListener('mousedown', handleSlideStart);
+div2.addEventListener('touchstart', handleSlideStart);
+
+let startX = 0; // 슬라이드 시작 지점 X 좌표
+let isSliding = false; // 슬라이드 중 여부
+
+function handleSlideStart(event) {
+  if (event.type === 'touchstart') {
+    startX = event.touches[0].clientX;
+  } else {
+    startX = event.clientX;
+  }
+
+  isSliding = true; // 슬라이드 중으로 설정
+
+  div2.addEventListener('mousemove', handleSlideMove);
+  div2.addEventListener('touchmove', handleSlideMove);
+  document.addEventListener('mouseup', handleSlideEnd);
+  document.addEventListener('touchend', handleSlideEnd);
+}
+
+function handleSlideMove(event) {
+  if (!isSliding) {
+    return;
+  }
+
+  event.preventDefault();
+
+  let currentX = 0; // 현재 X 좌표
+
+  if (event.type === 'touchmove') {
+    currentX = event.touches[0].clientX;
+  } else {
+    currentX = event.clientX;
+  }
+
+  const differenceX = currentX - startX; 
+
+  if (differenceX > 50) { // 오른쪽으로 슬라이드 시
+    clearInterval(timer); // 기존 타이머 제거
+    currentImageIndex = Math.max(0, currentImageIndex - 1); // 이전 이미지 인덱스
+    showImage();
+    startX = currentX; // 시작 지점 업데이트
+  } else if (differenceX < -50) { // 왼쪽으로 슬라이드 시
+    clearInterval(timer); // 기존 타이머 제거
+    currentImageIndex = Math.min(images.length - 1, currentImageIndex + 1); // 다음 이미지 인덱스
+    showImage();
+    startX = currentX; // 시작 지점 업데이트
+  }
+}
+
+function handleSlideEnd() {
+  if (!isSliding) {
+    return;
+  }
+
+  isSliding = false; 
+
+  div2.removeEventListener('mousemove', handleSlideMove);
+  div2.removeEventListener('touchmove', handleSlideMove);
+  document.removeEventListener('mouseup', handleSlideEnd);
+  document.removeEventListener('touchend', handleSlideEnd);
+
+  timer = setInterval(() => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    showImage();
+  }, 5000);
+}
+
 
 // ⭐div3 스타일
 const div3 = document.getElementById("div3");

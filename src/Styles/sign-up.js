@@ -1,7 +1,5 @@
-/* 수정할 것
-1. 지역 추가하기
-2. 지역 선택하면 메인에 있는 월출·월몰 시각이 지역에 맞게 보여주기 */
-
+// 수정 회원가입
+// const mysql = require('mysql');
 document.body.style.margin = "0px";
 
 // root
@@ -125,17 +123,6 @@ div2input3.setAttribute("type", "password");
 div2input3.style.height = "20%";
 div2input3.style.width = "70%";
 div2input3.style.marginLeft = "14%";
-// 옵션 추가
-/* 하나하나 쓰는 방법
-var option1 = document.createElement("option");
-option1.value = "option1";
-option1.text = "가거도";
-localSelect.appendChild(option1);
-
-var option2 = document.createElement("option");
-option2.value = "option2";
-option2.text = "가평";
-localSelect.appendChild(option2); */
 
 //for문 사용하여 위의 코드 간단하게 나타냄
 var select = document.getElementById("localSelect");
@@ -189,3 +176,42 @@ div2input4.addEventListener("click", function () {
   // 회원가입 완료-> 메인 페이지로 이동
   window.location.href = "main.html";
 });
+
+
+//수정
+// MySQL 데이터베이스 연결 설정
+const connection = mysql.createConnection({
+  host: '호스트',
+  user: '사용자',
+  password: '비밀번호',
+  database: '데이터베이스',
+});
+
+// MySQL 데이터베이스 연결
+connection.connect((err) => {
+  if (err) {
+    console.error('MySQL 연결 실패:', err);
+  } else {
+    console.log('MySQL 연결 성공');
+  }
+});
+
+// 회원가입 폼 제출 시 실행되는 함수
+function submitForm() {
+  // 입력된 아이디, 비밀번호, 지역 가져오기
+  const id = document.getElementById('idInput').value;
+  const password = document.getElementById('pwInput').value;
+  const selectedOption = document.getElementById('localSelect').value;
+
+  const query = `INSERT INTO users (id, password, location) VALUES ('${id}', '${password}', '${selectedOption}')`;
+
+  connection.query(query, (error, results, fields) => {
+    if (error) {
+      console.error('회원가입 실패:', error);
+    } else {
+      console.log('회원가입 성공');
+      // 회원가입 완료 후 메인 페이지로 이동
+      window.location.href = 'main.html';
+    }
+  });
+}

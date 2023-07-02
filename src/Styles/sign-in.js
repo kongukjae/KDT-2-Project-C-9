@@ -1,6 +1,3 @@
-/* 수정할 것
-1. 로고 클릭시 메인페이지 이동 */
-
 document.body.style.margin = "0px";
 
 // root

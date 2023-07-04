@@ -256,8 +256,9 @@ root.appendChild(menuContainer);
 menuContainer.style.position = "fixed";
 menuContainer.style.top = "0";
 menuContainer.style.right = "-50%";
+menuContainer.style.marginRight = "570px";//수정
 menuContainer.style.height = "100%";
-menuContainer.style.width = "50%";
+menuContainer.style.width = "15%";//수정
 menuContainer.style.backgroundColor = "rgba(255, 255, 255, 0.8)"; //투명으로 만듦
 menuContainer.style.transition = "all 0.3s ease-in-out";
 
